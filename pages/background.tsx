@@ -4,6 +4,6 @@ export default () => (
   <>
     <Nav selected="Background" />
 
-    <div className="mt-4">TODO: My Background</div>
+    <div>TODO: My Background</div>
   </>
 );
