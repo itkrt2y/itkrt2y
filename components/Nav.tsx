@@ -23,7 +23,7 @@ const NavItem = ({
 );
 
 export default ({ selected }: { selected: NavItems }) => (
-  <nav className="UnderlineNav UnderlineNav--full" aria-label="Foo bar">
+  <nav className="UnderlineNav UnderlineNav--full" aria-label="Navigation">
     <div className="container-lg UnderlineNav-container">
       <div className="UnderlineNav-body">
         <NavItem name="Skills" href="/" selected={selected} />
