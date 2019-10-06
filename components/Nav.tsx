@@ -1,30 +1,34 @@
 import Link from "next/link";
 
-type NavItem = "skills" | "background";
+type NavItems = "Skills" | "Background" | "Interests";
 
-export default ({ selected }: { selected: NavItem }) => (
+const NavItem = ({
+  name,
+  href,
+  selected
+}: {
+  name: NavItems;
+  href: string;
+  selected: NavItems;
+}) => (
+  <Link href={href}>
+    <a
+      className={`UnderlineNav-item text-white ${
+        selected === name ? "selected" : ""
+      }`}
+    >
+      {name}
+    </a>
+  </Link>
+);
+
+export default ({ selected }: { selected: NavItems }) => (
   <nav className="UnderlineNav UnderlineNav--full" aria-label="Foo bar">
     <div className="container-lg UnderlineNav-container">
       <div className="UnderlineNav-body">
-        <Link href="/skills">
-          <a
-            className={`UnderlineNav-item text-white ${
-              selected === "skills" ? "selected" : ""
-            }`}
-          >
-            Skills
-          </a>
-        </Link>
-
-        <Link href="/background">
-          <a
-            className={`UnderlineNav-item text-white ${
-              selected === "background" ? "selected" : ""
-            }`}
-          >
-            Background
-          </a>
-        </Link>
+        <NavItem name="Skills" href="/" selected={selected} />
+        <NavItem name="Background" href="/background" selected={selected} />
+        <NavItem name="Interests" href="/interests" selected={selected} />
       </div>
     </div>
   </nav>
