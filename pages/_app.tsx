@@ -57,8 +57,6 @@ export default class extends App {
                     <a
                       href="https://github.com/itkrt2y"
                       className="text-white ml-1"
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       @itkrt2y
                     </a>
