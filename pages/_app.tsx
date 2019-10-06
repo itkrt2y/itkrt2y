@@ -33,11 +33,10 @@ export default class extends App {
                 </Link>
               </div>
 
-              <div className="col-12 col-md-11 d-flex flex-column flex-justify-center flex-items-center flex-md-items-start pl-md-4">
-                <h1 className="text-normal lh-condensed mb-1">
-                  Tatsuya Itakura
-                </h1>
-                <div className="mt-2 mb-6">
+              <div className="col-12 col-md-11 d-flex flex-column flex-justify-center flex-items-center">
+                <h1 className="text-normal">Tatsuya Itakura</h1>
+
+                <div className="mt-2 mb-5">
                   <div className="d-flex flex-items-center my-2">
                     <svg
                       height="20"
