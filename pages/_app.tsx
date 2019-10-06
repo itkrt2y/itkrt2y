@@ -1,6 +1,7 @@
 import * as React from "react";
 import App from "next/app";
 import Head from "next/head";
+import Link from "next/link";
 
 export default class extends App {
   render() {
@@ -21,11 +22,15 @@ export default class extends App {
           >
             <div className="d-flex flex-column flex-items-center">
               <div className="col-5 col-md-9 d-flex flex-items-center flex-items-center mb-5">
-                <img
-                  className="width-full avatar"
-                  src="/static/images/avatar.webp"
-                  alt="itkrt2y's avatar"
-                />
+                <Link href="/">
+                  <a>
+                    <img
+                      className="width-full avatar"
+                      src="/static/images/avatar.webp"
+                      alt="itkrt2y's avatar"
+                    />
+                  </a>
+                </Link>
               </div>
 
               <div className="col-12 col-md-11 d-flex flex-column flex-justify-center flex-items-center flex-md-items-start pl-md-4">
