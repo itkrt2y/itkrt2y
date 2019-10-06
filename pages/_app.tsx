@@ -14,22 +14,9 @@ export default class extends App {
           />
         </Head>
 
-        <style jsx global>{`
-          html,
-          body {
-            min-height: 100vh;
-          }
-
-          body {
-            background-color: #24292e;
-            color: white;
-            font-size: 1.05rem;
-          }
-        `}</style>
-
         <div className="d-md-flex" style={{ minHeight: "100vh" }}>
           <div
-            className="col-xl-3 col-lg-4 col-md-5 col-sm-12 col-12 px-2 py-6"
+            className="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12 px-2 py-6"
             style={{ backgroundColor: "#2f363d" }}
           >
             <div className="d-flex flex-column flex-items-center">
@@ -88,9 +75,11 @@ export default class extends App {
                     </svg>
                     <a
                       href="mailto:itkrt2y.591721200@gmail.com"
-                      className="text-white ml-1"
+                      className="text-white ml-1 css-truncate expandable"
                     >
-                      itkrt2y.591721200@gmail.com
+                      <span className="email css-truncate-target">
+                        itkrt2y.591721200@gmail.com
+                      </span>
                     </a>
                   </div>
 
@@ -117,10 +106,37 @@ export default class extends App {
             </div>
           </div>
 
-          <div className="col-xl-9 col-lg-8 col-md-7 col-sm-12 col-12 px-4 px-lg-6 py-6">
+          <div className="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 px-4 px-lg-6 py-6">
             <Component {...pageProps} />
           </div>
         </div>
+
+        <style jsx global>{`
+          html,
+          body {
+            min-height: 100vh;
+          }
+
+          body {
+            background-color: #24292e;
+            color: white;
+            font-size: 1.05rem;
+          }
+        `}</style>
+
+        <style jsx>{`
+          @media (min-width: 545px) {
+            .email.css-truncate-target {
+              max-width: 21vw;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .email.css-truncate-target {
+              max-width: 100%;
+            }
+          }
+        `}</style>
       </>
     );
   }
