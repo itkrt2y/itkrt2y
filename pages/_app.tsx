@@ -10,6 +10,7 @@ const Avatar = () => (
         className="width-full avatar"
         src="/static/images/avatar.webp"
         alt="itkrt2y's avatar"
+        style={{ maxWidth: 272 }}
       />
     </a>
   </Link>
@@ -89,7 +90,7 @@ export default class extends App {
             style={{ backgroundColor: "#2f363d" }}
           >
             <div className="d-flex flex-column flex-items-center">
-              <div className="col-5 col-md-10 d-flex flex-items-center flex-items-center mb-6">
+              <div className="col-5 col-md-10 mb-6 text-center">
                 <Avatar />
               </div>
 
