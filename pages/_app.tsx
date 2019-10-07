@@ -16,7 +16,7 @@ const Avatar = () => (
 );
 
 const Icons = () => (
-  <div className="d-flex flex-items-center">
+  <>
     <a href="https://github.com/itkrt2y" className="mx-2">
       <svg
         height="24"
@@ -68,7 +68,7 @@ const Icons = () => (
         ></path>
       </svg>
     </a>
-  </div>
+  </>
 );
 
 export default class extends App {
