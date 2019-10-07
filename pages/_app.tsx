@@ -84,9 +84,9 @@ export default class extends App {
           />
         </Head>
 
-        <div className="d-md-flex" style={{ minHeight: "100vh" }}>
+        <div className="d-lg-flex" style={{ minHeight: "100vh" }}>
           <div
-            className="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12 px-2 py-6"
+            className="col-xl-3 col-lg-4 col-12 px-2 py-6"
             style={{ backgroundColor: "#2f363d" }}
           >
             <div className="d-flex flex-column flex-items-center">
@@ -107,7 +107,7 @@ export default class extends App {
             </div>
           </div>
 
-          <div className="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 px-md-4 py-md-5">
+          <div className="col-xl-9 col-lg-8 col-12 px-md-4 py-md-5">
             <Component {...pageProps} />
           </div>
         </div>
