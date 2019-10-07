@@ -86,7 +86,7 @@ export default class extends App {
 
         <div className="d-md-flex" style={{ minHeight: "100vh" }}>
           <div
-            className="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-12 px-2 py-6"
+            className="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12 px-2 py-6"
             style={{ backgroundColor: "#2f363d" }}
           >
             <div className="d-flex flex-column flex-items-center">
@@ -95,9 +95,7 @@ export default class extends App {
               </div>
 
               <div className="col-12 col-md-11 d-flex flex-column flex-justify-center flex-items-center">
-                <h1 className="text-normal no-wrap" style={{ fontSize: 28 }}>
-                  Tatsuya Itakura
-                </h1>
+                <div className="f1">Tatsuya Itakura</div>
 
                 <div className="mt-3 mb-4">
                   <Icons />
@@ -106,7 +104,7 @@ export default class extends App {
             </div>
           </div>
 
-          <div className="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-12 px-4 px-lg-6 py-6">
+          <div className="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 px-4 px-lg-6 py-6">
             <Component {...pageProps} />
           </div>
         </div>
