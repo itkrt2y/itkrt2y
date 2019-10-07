@@ -11,7 +11,7 @@ const NavItem = ({
   href: string;
   selected: NavItems;
 }) => (
-  <Link href={href}>
+  <Link href={href} prefetch>
     <a
       className={`UnderlineNav-item text-white m-0 px-4 ${
         selected === name ? "selected" : ""
