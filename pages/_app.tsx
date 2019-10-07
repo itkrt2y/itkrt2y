@@ -95,6 +95,9 @@ export default class extends App {
 
               <div className="col-12 col-md-11 d-flex flex-column flex-justify-center flex-items-center">
                 <div className="f1">Tatsuya Itakura</div>
+                <div className="f3">
+                  <span title="ITaKuRa TaTSUYa">@itkrt2y</span>
+                </div>
 
                 <div className="mt-3 mb-4">
                   <Icons />
