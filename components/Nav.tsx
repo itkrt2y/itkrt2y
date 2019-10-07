@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type NavItems = "Skills" | "Background" | "Interests";
+type NavItems = "About Me" | "Skills" | "Experience";
 
 const NavItem = ({
   name,
@@ -26,9 +26,9 @@ export default ({ selected }: { selected: NavItems }) => (
   <nav className="UnderlineNav UnderlineNav--full mb-5" aria-label="Navigation">
     <div className="UnderlineNav-container">
       <div className="UnderlineNav-body">
-        <NavItem name="Skills" href="/" selected={selected} />
-        <NavItem name="Background" href="/background" selected={selected} />
-        <NavItem name="Interests" href="/interests" selected={selected} />
+        <NavItem name="About Me" href="/" selected={selected} />
+        <NavItem name="Skills" href="/skills" selected={selected} />
+        <NavItem name="Experience" href="/experience" selected={selected} />
       </div>
     </div>
   </nav>
