@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type NavItems = "About Me" | "Skills" | "Experience";
+type NavItems = "About Me" | "Skills" | "Experience" | "This Site";
 
 const NavItem = ({
   name,
@@ -29,6 +29,7 @@ export default ({ selected }: { selected: NavItems }) => (
         <NavItem name="About Me" href="/" selected={selected} />
         <NavItem name="Skills" href="/skills" selected={selected} />
         <NavItem name="Experience" href="/experience" selected={selected} />
+        <NavItem name="This Site" href="/this-site" selected={selected} />
       </div>
     </div>
   </nav>
