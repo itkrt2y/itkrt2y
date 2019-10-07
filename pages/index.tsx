@@ -4,6 +4,6 @@ export default () => (
   <>
     <Nav selected="Skills" />
 
-    <div>TODO: My Skills</div>
+    <div className="px-md-0 px-3">TODO: My Skills</div>
   </>
 );

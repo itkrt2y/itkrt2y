@@ -104,7 +104,7 @@ export default class extends App {
             </div>
           </div>
 
-          <div className="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 px-4 px-lg-6 py-6">
+          <div className="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 px-md-4 py-md-5">
             <Component {...pageProps} />
           </div>
         </div>
