@@ -121,7 +121,6 @@ export default class extends App {
           body {
             background-color: #24292e;
             color: white;
-            font-size: 1.05rem;
           }
         `}</style>
 
