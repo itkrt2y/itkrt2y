@@ -86,7 +86,7 @@ export default class extends App {
 
         <div className="d-lg-flex" style={{ minHeight: "100vh" }}>
           <div
-            className="col-xl-3 col-lg-4 col-12 px-2 py-6"
+            className="col-xl-3 col-lg-4 col-12 px-2 pt-6 pb-7"
             style={{ backgroundColor: "#2f363d" }}
           >
             <div className="d-flex flex-column flex-items-center">
@@ -100,7 +100,7 @@ export default class extends App {
                   <span title="ITaKuRa TaTSUYa">@itkrt2y</span>
                 </div>
 
-                <div className="mt-3 mb-4">
+                <div className="mt-3">
                   <Icons />
                 </div>
               </div>
