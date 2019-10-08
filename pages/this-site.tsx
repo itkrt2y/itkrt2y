@@ -10,6 +10,8 @@ export default () => (
 
     <Nav selected="This Site" />
 
-    <div className="px-md-0 px-3">TODO: Explain architectures of this site</div>
+    <div className="px-3">
+      <h2>🚧 Under Construction 🚧</h2>
+    </div>
   </>
 );
