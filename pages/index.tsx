@@ -5,16 +5,13 @@ import { title } from "../lib/header";
 export default () => (
   <>
     <Head>
-      <title>{title("About Me")}</title>
+      <title>{title("Blog")}</title>
     </Head>
 
-    <Nav selected="About Me" />
+    <Nav selected="Blog" />
 
     <div className="px-3">
-      <div className="f3 text-mono">
-        I am a web developer with a passion for creating simple, fast and user
-        friendly services.
-      </div>
+      <h2>🚧 Under Construction 🚧</h2>
     </div>
   </>
 );
