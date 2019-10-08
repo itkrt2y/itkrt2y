@@ -11,7 +11,10 @@ export default () => (
     <Nav selected="About Me" />
 
     <div className="px-3">
-      <h2>🚧 Under Construction 🚧</h2>
+      <div className="f3 text-mono">
+        I am a web developer with a passion for creating simple, fast and user
+        friendly services.
+      </div>
     </div>
   </>
 );
