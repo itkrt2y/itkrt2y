@@ -13,7 +13,7 @@ const NavItem = ({
 }) => (
   <Link href={href}>
     <a
-      className={`UnderlineNav-item text-white m-0 px-4 ${
+      className={`UnderlineNav-item text-white no-wrap px-2 ${
         selected === name ? "selected" : ""
       }`}
     >
@@ -25,7 +25,7 @@ const NavItem = ({
 export default ({ selected }: { selected: NavItems }) => (
   <nav className="UnderlineNav UnderlineNav--full mb-5" aria-label="Navigation">
     <div className="UnderlineNav-container">
-      <div className="UnderlineNav-body">
+      <div className="UnderlineNav-body" style={{ overflowX: "auto" }}>
         <NavItem name="About Me" href="/" selected={selected} />
         <NavItem name="Skills" href="/skills" selected={selected} />
         <NavItem name="Experience" href="/experience" selected={selected} />
