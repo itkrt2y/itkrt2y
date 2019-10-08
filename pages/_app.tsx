@@ -8,7 +8,7 @@ const Avatar = () => (
     <a>
       <img
         className="width-full avatar"
-        src="/static/images/avatar.webp"
+        src="images/avatar.webp"
         alt="itkrt2y's avatar"
         style={{ maxWidth: 272 }}
       />
