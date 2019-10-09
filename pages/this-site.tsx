@@ -22,15 +22,26 @@ const usingTechs = [
 ];
 
 const TechList = () => (
-  <ul className="pl-4 f3">
+  <div className="d-flex flex-wrap">
     {usingTechs.map(tech => (
-      <li className="mb-2" key={tech.name}>
-        <a href={tech.url} className="text-white">
+      <a href={tech.url} key={tech.name}>
+        <div className="px-3 py-1 px-md-4 py-md-2 border border-gray rounded-1 m-1 m-lg-2 f3 text-mono">
           {tech.name}
-        </a>
-      </li>
+        </div>
+      </a>
     ))}
-  </ul>
+
+    <style jsx>{`
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      a:hover {
+        opacity: 0.8;
+      }
+    `}</style>
+  </div>
 );
 
 export default () => (
