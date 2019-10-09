@@ -2,10 +2,15 @@ import Head from "next/head";
 import Nav from "../components/Nav";
 import { title } from "../lib/header";
 
-const usingTechs = [
+type Tech = { name: string; url: string };
+const usingTechs: Tech[] = [
   {
     name: "Next.js",
     url: "https://nextjs.org/"
+  },
+  {
+    name: "Primer",
+    url: "https://primer.style"
   },
   {
     name: "Docker",
