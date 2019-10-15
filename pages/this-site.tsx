@@ -13,14 +13,6 @@ const usingTechs: Tech[] = [
     url: "https://primer.style"
   },
   {
-    name: "Docker",
-    url: "https://docker.com/"
-  },
-  {
-    name: "Google Cloud Run",
-    url: "https://cloud.google.com/run/"
-  },
-  {
     name: "Firebase Hosting",
     url: "https://firebase.google.com/products/hosting/"
   }
