@@ -9,7 +9,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "start:production": "next start -p $PORT"
+    "start:production": "next start -p $PORT",
+    "export": "next export"
   },
   "dependencies": {
     "next": "^9.1.1",
