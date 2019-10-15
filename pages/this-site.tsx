@@ -22,7 +22,10 @@ const TechList = () => (
   <div className="d-flex flex-wrap">
     {usingTechs.map(tech => (
       <a href={tech.url} key={tech.name}>
-        <div className="px-3 py-1 px-md-4 py-md-2 border border-gray rounded-1 m-1 m-lg-2 f3 text-mono">
+        <div
+          className="px-3 py-1 px-md-4 py-md-2 rounded-1 m-1 m-lg-2 f3 text-mono"
+          style={{ border: "1px solid #79b8ff" }}
+        >
           {tech.name}
         </div>
       </a>
@@ -30,8 +33,8 @@ const TechList = () => (
 
     <style jsx>{`
       a {
+        color: #79b8ff;
         text-decoration: none;
-        color: white;
       }
 
       a:hover {
