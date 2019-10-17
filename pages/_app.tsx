@@ -40,7 +40,7 @@ export default class extends App {
       <>
         <Head>
           <link
-            href="https://unpkg.com/primer/build/build.css"
+            href="https://unpkg.com/primer@11.0.0/build/build.css"
             rel="stylesheet"
           />
         </Head>
