@@ -27,9 +27,13 @@ const blogs: Blog[] = [
   }
 ];
 
-const Blog = ({ blog: { title, url } }: { blog: Blog }) => (
+const PublishedAt = ({ children }: { children: string }) => (
+  <span style={{ color: "#fafbfc" }}>{children}</span>
+);
+
+const BlogCard = ({ title, url }: { title: string; url: string }) => (
   <a href={url} className="mb-3 text-white" style={{ textDecoration: "none" }}>
-    <div id="content" className="p-3 border border-gray rounded-1">
+    <div id="content" className="p-3 border border-gray-dark rounded-1">
       <h4>{title}</h4>
     </div>
 
@@ -41,20 +45,24 @@ const Blog = ({ blog: { title, url } }: { blog: Blog }) => (
   </a>
 );
 
+const Blog = ({ blog }: { blog: Blog }) => (
+  <div className="mb-5">
+    <div
+      className="mb-3"
+      style={{ backgroundColor: "#24292e", marginLeft: -24 }}
+    >
+      <GitCommitIcon />
+      <PublishedAt>{blog.publishedAt}</PublishedAt>
+    </div>
+
+    <BlogCard title={blog.title} url={blog.url} />
+  </div>
+);
+
 const Blogs = ({ blogs }: { blogs: Blog[] }) => (
   <div id="blogs">
     {blogs.map(blog => (
-      <div className="mb-5" key={blog.title}>
-        <div
-          className="mb-3"
-          style={{ backgroundColor: "#24292e", marginLeft: -24 }}
-        >
-          <GitCommitIcon />
-          <span style={{ color: "#fafbfc" }}>{blog.publishedAt}</span>
-        </div>
-
-        <Blog blog={blog} />
-      </div>
+      <Blog blog={blog} key={blog.title} />
     ))}
 
     <style jsx>{`
