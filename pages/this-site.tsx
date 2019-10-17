@@ -18,40 +18,44 @@ const usingTechs: Tech[] = [
   }
 ];
 
-const TechList = () => (
-  <div className="d-flex flex-wrap">
-    {usingTechs.map(tech => (
-      <a
-        href={tech.url}
-        className="text-white"
-        style={{ textDecoration: "none" }}
-        key={tech.name}
-      >
-        <div className="px-3 py-1 py-md-2 m-1 m-lg-2 border border-gray rounded-1 f3 text-mono">
-          {tech.name}
-        </div>
-      </a>
-    ))}
+function TechList() {
+  return (
+    <div className="d-flex flex-wrap">
+      {usingTechs.map(tech => (
+        <a
+          href={tech.url}
+          className="text-white"
+          style={{ textDecoration: "none" }}
+          key={tech.name}
+        >
+          <div className="px-3 py-1 py-md-2 m-1 m-lg-2 border border-gray rounded-1 f3 text-mono">
+            {tech.name}
+          </div>
+        </a>
+      ))}
 
-    <style jsx>{`
-      a:hover {
-        opacity: 0.8;
-      }
-    `}</style>
-  </div>
-);
-
-export default () => (
-  <>
-    <Head>
-      <title>{title("This Site")}</title>
-    </Head>
-
-    <Nav selected="This Site" />
-
-    <div className="px-3">
-      <h2 className="border-bottom pb-2 mb-4">This site is built with</h2>
-      <TechList />
+      <style jsx>{`
+        a:hover {
+          opacity: 0.8;
+        }
+      `}</style>
     </div>
-  </>
-);
+  );
+}
+
+export default function() {
+  return (
+    <>
+      <Head>
+        <title>{title("This Site")}</title>
+      </Head>
+
+      <Nav selected="This Site" />
+
+      <div className="px-3">
+        <h2 className="border-bottom pb-2 mb-4">This site is built with</h2>
+        <TechList />
+      </div>
+    </>
+  );
+}
