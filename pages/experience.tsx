@@ -109,21 +109,18 @@ function Repos({ repos }: { repos: Repo[] }) {
   return (
     <div className="d-flex flex-wrap mt-1">
       {repos.map(repo => (
-        <a href={repo.url} key={repo.name}>
-          <div
-            className="px-3 py-1 rounded-1 m-1 f4 text-mono"
-            style={{ border: "1px solid #79b8ff" }}
-          >
+        <a
+          href={repo.url}
+          className="text-white text-underline"
+          key={repo.name}
+        >
+          <div className="px-3 py-1 border rounded-1 m-1 f4 text-mono">
             {repo.name}
           </div>
         </a>
       ))}
 
       <style jsx>{`
-        a {
-          color: #79b8ff;
-          text-decoration: none;
-        }
         a:hover {
           opacity: 0.8;
         }

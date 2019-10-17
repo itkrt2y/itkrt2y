@@ -33,11 +33,7 @@ function PublishedAt({ children }: { children: string }) {
 
 function BlogCard({ title, url }: { title: string; url: string }) {
   return (
-    <a
-      href={url}
-      className="mb-3 text-white"
-      style={{ textDecoration: "none" }}
-    >
+    <a href={url} className="mb-3 text-white text-underline">
       <div id="content" className="p-3 border border-gray-dark rounded-1">
         <h4>{title}</h4>
       </div>

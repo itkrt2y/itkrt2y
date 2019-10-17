@@ -24,8 +24,7 @@ function TechList() {
       {usingTechs.map(tech => (
         <a
           href={tech.url}
-          className="text-white"
-          style={{ textDecoration: "none" }}
+          className="text-white text-underline"
           key={tech.name}
         >
           <div className="px-3 py-1 py-md-2 m-1 m-lg-2 border border-gray rounded-1 f3 text-mono">
