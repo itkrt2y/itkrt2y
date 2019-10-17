@@ -21,22 +21,19 @@ const usingTechs: Tech[] = [
 const TechList = () => (
   <div className="d-flex flex-wrap">
     {usingTechs.map(tech => (
-      <a href={tech.url} key={tech.name}>
-        <div
-          className="px-3 py-1 px-md-4 py-md-2 rounded-1 m-1 m-lg-2 f3 text-mono"
-          style={{ border: "1px solid #79b8ff" }}
-        >
+      <a
+        href={tech.url}
+        className="text-white"
+        style={{ textDecoration: "none" }}
+        key={tech.name}
+      >
+        <div className="px-3 py-1 py-md-2 m-1 m-lg-2 border border-gray rounded-1 f3 text-mono">
           {tech.name}
         </div>
       </a>
     ))}
 
     <style jsx>{`
-      a {
-        color: #79b8ff;
-        text-decoration: none;
-      }
-
       a:hover {
         opacity: 0.8;
       }

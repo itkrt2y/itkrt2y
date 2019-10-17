@@ -131,7 +131,10 @@ const ExperienceList = () => (
   <div id="experience-listing">
     {experiences.map(exp => (
       <div className="mb-5" key={exp.company}>
-        <div style={{ backgroundColor: "#24292e", marginLeft: -24 }}>
+        <div
+          className="mb-3"
+          style={{ backgroundColor: "#24292e", marginLeft: -24 }}
+        >
           <svg
             className="octicon octicon-git-commit"
             viewBox="0 0 14 16"
@@ -153,7 +156,7 @@ const ExperienceList = () => (
           </span>
         </div>
 
-        <div className="px-3 py-4 mt-3 border rounded-1">
+        <div className="px-3 py-4 border rounded-1">
           <div className="border-bottom">
             <h3>{exp.company}</h3>
             <div className="mb-2">{exp.as}</div>
