@@ -2,28 +2,130 @@ import Head from "next/head";
 import Nav from "../components/Nav";
 import { title } from "../lib/header";
 
-const experiences = [
+type Repo = {
+  name: string;
+  url: string;
+};
+
+type Experience = {
+  from: string;
+  to: string;
+  company: string;
+  as: string;
+  techs: string[];
+  publicRepos: Repo[];
+};
+
+const experiences: Experience[] = [
   {
     from: "Feb 2017",
     to: "May 2019",
-    company: "Takeyu Web inc."
+    company: "Takeyu Web inc.",
+    as: "Ruby on Rails / Frontend Engineer",
+    techs: [
+      "Ruby on Rails",
+      "React",
+      "PostgreSQL",
+      "MySQL",
+      "Elasticsearch",
+      "Docker",
+      "AWS",
+      "Circle CI",
+      "Travis CI"
+    ],
+    publicRepos: [
+      {
+        name: "gitfab2",
+        url: "https://github.com/takeyuwebinc/gitfab2"
+      },
+      {
+        name: "repro-client",
+        url: "https://github.com/itkrt2y/repro-client"
+      },
+      {
+        name: "render_async",
+        url: "https://github.com/itkrt2y/render_async"
+      }
+    ]
   },
   {
     from: "Aug 2016",
     to: "Feb 2017",
-    company: "MediWeb Inc."
+    company: "MediWeb Inc.",
+    as: "Ruby on Rails Engineer",
+    techs: [
+      "Ruby on Rails",
+      "Ember.js",
+      "Docker",
+      "PostgreSQL",
+      "Engine Yard",
+      "Circle CI"
+    ],
+    publicRepos: []
   },
   {
     from: "Jan 2015",
     to: "Aug 2016",
-    company: "CrowdWorks Inc."
+    company: "CrowdWorks Inc.",
+    as: "Ruby on Rails Engineer",
+    techs: [
+      "Ruby on Rails",
+      "Vue",
+      "jQuery",
+      "MySQL",
+      "Elasticsearch",
+      "AWS",
+      "Circle CI"
+    ],
+    publicRepos: []
   },
   {
     from: "Dec 2014",
     to: "Jul 2013",
-    company: "FunTeam Inc."
+    company: "FunTeam Inc.",
+    as: "Java Engineer",
+    techs: ["Java", "Spring", "Struts", "jQuery"],
+    publicRepos: []
   }
 ];
+
+const Techs = ({ techs }: { techs: string[] }) => (
+  <div className="d-flex flex-wrap mt-1">
+    {techs.map(tech => (
+      <div
+        className="px-3 py-1 border border-gray rounded-1 m-1 f4 text-mono"
+        key={tech}
+      >
+        {tech}
+      </div>
+    ))}
+  </div>
+);
+
+const Repos = ({ repos }: { repos: Repo[] }) => (
+  <div className="d-flex flex-wrap mt-1">
+    {repos.map(repo => (
+      <a href={repo.url} key={repo.name}>
+        <div
+          className="px-3 py-1 rounded-1 m-1 f4 text-mono"
+          style={{ border: "1px solid #79b8ff" }}
+        >
+          {repo.name}
+        </div>
+      </a>
+    ))}
+
+    <style jsx>{`
+      a {
+        color: #79b8ff;
+        text-decoration: none;
+      }
+      a:hover {
+        opacity: 0.8;
+      }
+    `}</style>
+  </div>
+);
 
 const ExperienceList = () => (
   <div id="experience-listing">
@@ -52,8 +154,22 @@ const ExperienceList = () => (
         </div>
 
         <div className="px-3 py-4 mt-3 border rounded-1">
-          <h3 className="f4 border-bottom mb-3">{exp.company}</h3>
-          <div>foo</div>
+          <div className="border-bottom">
+            <h3>{exp.company}</h3>
+            <div className="mb-2">{exp.as}</div>
+          </div>
+
+          <div className="mt-4">
+            <h4 className="text-normal">Techs</h4>
+            <Techs techs={exp.techs} />
+          </div>
+
+          {exp.publicRepos.length > 0 ? (
+            <div className="mt-4">
+              <h4 className="text-normal">Public Repositories</h4>
+              <Repos repos={exp.publicRepos} />
+            </div>
+          ) : null}
         </div>
       </div>
     ))}
