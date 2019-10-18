@@ -97,7 +97,7 @@ export default function() {
   return (
     <>
       <Head>
-        <title>{title("Blog")}</title>
+        <title>{title()}</title>
       </Head>
 
       <Nav selected="Blog" />
