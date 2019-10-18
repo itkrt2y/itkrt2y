@@ -2,44 +2,16 @@ import Head from "next/head";
 import Nav from "../components/Nav";
 import { title } from "../lib/header";
 
-type Tech = { name: string; url: string };
-const usingTechs: Tech[] = [
-  {
-    name: "Next.js",
-    url: "https://nextjs.org/"
-  },
-  {
-    name: "Primer",
-    url: "https://primer.style"
-  },
-  {
-    name: "Firebase Hosting",
-    url: "https://firebase.google.com/products/hosting/"
-  }
-];
-
-function TechList() {
+function Tech({ name, url }: { name: string; url: string }) {
   return (
-    <div className="d-flex flex-wrap">
-      {usingTechs.map(tech => (
-        <a
-          href={tech.url}
-          className="text-white text-underline"
-          key={tech.name}
-        >
-          <div className="px-3 py-1 py-md-2 m-1 m-lg-2 border border-gray rounded-1 f3 text-mono">
-            {tech.name}
-          </div>
-        </a>
-      ))}
-
-      <style jsx>{`
-        a:hover {
-          opacity: 0.8;
-        }
-      `}</style>
-    </div>
+    <a href={url} className="text-white text-underline f3">
+      {name}
+    </a>
   );
+}
+
+function TechSpacer() {
+  return <span className="f3 mx-1"> / </span>;
 }
 
 export default function() {
@@ -64,7 +36,14 @@ export default function() {
 
         <div className="my-5">
           <h2 className="border-bottom pb-2 mb-4">Built with</h2>
-          <TechList />
+          <Tech name="Next.js" url="https://nextjs.org/" />
+          <TechSpacer />
+          <Tech name="Primer" url="https://primer.style" />
+          <TechSpacer />
+          <Tech
+            name="Firebase Hosting"
+            url="https://firebase.google.com/products/hosting/"
+          />
         </div>
       </div>
     </>
