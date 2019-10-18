@@ -63,7 +63,7 @@ export default function() {
         </div>
 
         <div className="my-5">
-          <h2 className="border-bottom pb-2 mb-4">This site is built with</h2>
+          <h2 className="border-bottom pb-2 mb-4">Built with</h2>
           <TechList />
         </div>
       </div>
