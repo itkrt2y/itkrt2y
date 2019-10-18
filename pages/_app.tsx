@@ -69,6 +69,11 @@ export default class extends App {
           <meta name="msapplication-TileColor" content="#41297e" />
           <meta name="theme-color" content="#ffffff" />
 
+          <meta
+            name="description"
+            content="Tatsuya Itakura (@itkrt2y) - Web developer with a passion for creating simple, fast and user friendly services."
+          />
+
           <link
             href="https://unpkg.com/primer@11.0.0/build/build.css"
             rel="stylesheet"
