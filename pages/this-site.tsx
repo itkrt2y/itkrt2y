@@ -44,6 +44,8 @@ export default function() {
             name="Firebase Hosting"
             url="https://firebase.google.com/products/hosting/"
           />
+          <TechSpacer />
+          <Tech name="Google Domains" url="https://domains.google" />
         </div>
       </div>
     </>
