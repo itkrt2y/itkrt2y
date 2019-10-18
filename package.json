@@ -9,8 +9,11 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "start:production": "next start -p $PORT",
-    "export": "next export"
+    "export": "yarn build && next export",
+    "preserve": "yarn export",
+    "serve": "firebase serve",
+    "predeploy": "yarn export",
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "next": "^9.1.1",
@@ -27,6 +30,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.1.2",
+    "firebase-tools": "^7.6.1",
     "prettier": "^1.18.2",
     "typescript": "^3.6.4"
   }
