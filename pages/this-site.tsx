@@ -52,8 +52,20 @@ export default function() {
       <Nav selected="This Site" />
 
       <div className="px-3">
-        <h2 className="border-bottom pb-2 mb-4">This site is built with</h2>
-        <TechList />
+        <div className="mb-5">
+          <h2 className="border-bottom pb-2 mb-4">Repository</h2>
+          <a
+            href="https://github.com/itkrt2y/about-me"
+            className="text-white text-underline f3"
+          >
+            itkrt2y / about-me
+          </a>
+        </div>
+
+        <div className="my-5">
+          <h2 className="border-bottom pb-2 mb-4">This site is built with</h2>
+          <TechList />
+        </div>
       </div>
     </>
   );
