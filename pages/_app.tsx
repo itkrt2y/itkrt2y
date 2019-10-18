@@ -7,12 +7,16 @@ import { GitHubIcon, TwitterIcon, MailIcon } from "../components/icons";
 const Avatar = () => (
   <Link href="/">
     <a>
-      <img
-        className="width-full"
-        src="images/avatar.webp"
-        alt="itkrt2y's avatar"
-        style={{ maxWidth: 272 }}
-      />
+      <picture>
+        <source type="image/webp" srcSet="images/avatar.webp" />
+        <source type="image/jpeg" srcSet="images/avatar.jpg" />
+        <img
+          className="width-full"
+          src="images/avatar.jpg"
+          alt="avatar"
+          style={{ maxWidth: 272 }}
+        />
+      </picture>
     </a>
   </Link>
 );
