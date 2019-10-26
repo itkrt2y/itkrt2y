@@ -102,17 +102,19 @@ export default class extends App {
                 <Avatar />
               </div>
 
-              <div className="col-8 col-lg-12 pl-4 pl-md-5 pl-lg-3">
-                <div className="f1">Tatsuya Itakura</div>
-                <div className="f3">
-                  <span title="ITaKuRa TaTSUYa">@itkrt2y</span>
-                </div>
-                <div className="text-mono text-small mt-3 mt-lg-4">
-                  Web developer with a passion for creating simple, fast and
-                  user friendly services.
+              <div className="col-8 col-lg-12">
+                <div className="pl-4 pl-md-5 pl-lg-3">
+                  <div className="f1">Tatsuya Itakura</div>
+                  <div className="f3">
+                    <span title="ITaKuRa TaTSUYa">@itkrt2y</span>
+                  </div>
+                  <div className="text-mono text-small mt-3 mt-lg-4">
+                    Web developer with a passion for creating simple, fast and
+                    user friendly services.
+                  </div>
                 </div>
 
-                <div className="mt-2 mt-lg-4 text-lg-center">
+                <div className="mt-2 mt-lg-4 text-lg-center pl-4 pl-md-5 pl-lg-0">
                   <Icons />
                 </div>
               </div>
