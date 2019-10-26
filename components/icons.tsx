@@ -18,11 +18,11 @@ export const GitHubIcon = () => (
 
 export const TwitterIcon = () => (
   <svg
-    height="30"
-    width="28"
+    height="34"
+    width="30"
     className="v-align-middle"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="10 20 320 340"
+    viewBox="0 0 360 380"
     fill="#ffffff"
     aria-label="Twitter"
   >
