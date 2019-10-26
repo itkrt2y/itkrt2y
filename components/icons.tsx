@@ -33,7 +33,7 @@ export const TwitterIcon = () => (
 export const LeetCodeIcon = () => (
   <svg
     height="20"
-    width="20"
+    width="22"
     viewBox="0 0 24 24"
     className="v-align-middle"
     aria-label="LeetCode"
