@@ -26,9 +26,9 @@ export default ({ selected }: { selected: NavItems }) => (
   <nav className="UnderlineNav UnderlineNav--full mb-5" aria-label="Navigation">
     <div className="UnderlineNav-container">
       <div className="UnderlineNav-body" style={{ overflowX: "auto" }}>
-        <NavItem name="Blog" href="/" selected={selected} />
-        <NavItem name="Skills" href="/skills" selected={selected} />
+        <NavItem name="Skills" href="/" selected={selected} />
         <NavItem name="Experience" href="/experience" selected={selected} />
+        <NavItem name="Blog" href="/blog" selected={selected} />
         <NavItem name="This Site" href="/this-site" selected={selected} />
       </div>
     </div>
