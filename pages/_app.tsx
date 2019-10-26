@@ -2,7 +2,12 @@ import * as React from "react";
 import App from "next/app";
 import Head from "next/head";
 import Link from "next/link";
-import { GitHubIcon, TwitterIcon, MailIcon } from "../components/icons";
+import {
+  GitHubIcon,
+  TwitterIcon,
+  LeetCodeIcon,
+  MailIcon
+} from "../components/icons";
 
 const Avatar = () => (
   <Link href="/">
@@ -29,6 +34,10 @@ const Icons = () => (
 
     <a href="https://twitter.com/itkrt2y" className="mx-2">
       <TwitterIcon />
+    </a>
+
+    <a href="https://leetcode.com/itkrt2y" className="mx-2">
+      <LeetCodeIcon />
     </a>
 
     <a href="mailto:itkrt2y.591721200@gmail.com" className="ml-2">
