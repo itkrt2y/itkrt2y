@@ -2,8 +2,8 @@ module.exports = {
   exportPathMap: async function() {
     return {
       "/": { page: "/" },
-      "/skills": { page: "/skills" },
       "/experience": { page: "/experience" },
+      "/blog": { page: "/blog" },
       "/this-site": { page: "/this-site" }
     };
   }
