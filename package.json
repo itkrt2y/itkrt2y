@@ -16,7 +16,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "next": "^9.1.1",
+    "next": "^9.1.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
   },
