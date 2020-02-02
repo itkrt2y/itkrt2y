@@ -6,14 +6,14 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:prettier/recommended",
     "prettier/@typescript-eslint",
-    "prettier/react",
+    "prettier/react"
   ],
   globals: { Atomics: "readonly", SharedArrayBuffer: "readonly" },
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 2018,
-      sourceType: "module"
+    sourceType: "module"
   },
   plugins: ["@typescript-eslint", "react", "react-hooks", "prettier"],
   rules: {
