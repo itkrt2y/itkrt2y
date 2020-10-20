@@ -7,7 +7,7 @@ const NavItem = ({
   name,
   href,
   selected,
-  external = false
+  external = false,
 }: {
   name: NavItems;
   href: string;

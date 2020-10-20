@@ -14,7 +14,7 @@ function TechSpacer() {
   return <span className="f3 mx-1"> / </span>;
 }
 
-export default function() {
+export default function () {
   return (
     <>
       <Head>

@@ -9,7 +9,7 @@ function Title({ children }: { children: string }) {
 function SkillList({ skills }: { skills: string[] }) {
   return (
     <div className="d-flex flex-wrap">
-      {skills.map(skill => (
+      {skills.map((skill) => (
         <div
           className="px-3 py-1 py-md-2 m-1 m-lg-2 border border-gray rounded-1 f3 text-mono"
           key={skill}
@@ -21,7 +21,7 @@ function SkillList({ skills }: { skills: string[] }) {
   );
 }
 
-export default function() {
+export default function () {
   return (
     <>
       <Head>
@@ -41,7 +41,7 @@ export default function() {
               "React",
               "Next.js",
               "Ruby",
-              "Ruby on Rails"
+              "Ruby on Rails",
             ]}
           />
         </div>
@@ -56,7 +56,7 @@ export default function() {
               "Docker",
               "PostgreSQL",
               "Firebase",
-              "Elasticsearch"
+              "Elasticsearch",
             ]}
           />
         </div>
@@ -80,7 +80,7 @@ export default function() {
               "Make a Programming Language",
               "Make an OS",
               "Make a RDBMS",
-              "Make a fulltext search engine"
+              "Make a fulltext search engine",
             ]}
           />
         </div>

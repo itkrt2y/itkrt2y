@@ -13,18 +13,18 @@ const blogs: Blog[] = [
   {
     title: "Rails + TypeScript + webpack環境構築",
     url: "https://link.medium.com/MT5zu3jyN0",
-    publishedAt: "Feb 1, 2019"
+    publishedAt: "Feb 1, 2019",
   },
   {
     title: "Railsのポリモーフィック関連とはなんなのか",
     url: "https://qiita.com/itkrt2y/items/32ad1512fce1bf90c20b",
-    publishedAt: "Dec 4, 2016"
+    publishedAt: "Dec 4, 2016",
   },
   {
     title: "ghq, peco, hubで快適Gitライフを手に入れよう！",
     url: "https://qiita.com/itkrt2y/items/0671d1f48e66f21241e2",
-    publishedAt: "Dec 23, 2015"
-  }
+    publishedAt: "Dec 23, 2015",
+  },
 ];
 
 function PublishedAt({ children }: { children: string }) {
@@ -66,7 +66,7 @@ function Blog({ blog }: { blog: Blog }) {
 function Blogs({ blogs }: { blogs: Blog[] }) {
   return (
     <div id="blogs">
-      {blogs.map(blog => (
+      {blogs.map((blog) => (
         <Blog blog={blog} key={blog.title} />
       ))}
 
@@ -93,7 +93,7 @@ function Blogs({ blogs }: { blogs: Blog[] }) {
   );
 }
 
-export default function() {
+export default function () {
   return (
     <>
       <Head>

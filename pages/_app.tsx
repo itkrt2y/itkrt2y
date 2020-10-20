@@ -6,7 +6,7 @@ import {
   GitHubIcon,
   TwitterIcon,
   LeetCodeIcon,
-  MailIcon
+  MailIcon,
 } from "../components/icons";
 
 const Avatar = () => (

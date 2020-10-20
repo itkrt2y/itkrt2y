@@ -32,22 +32,22 @@ const experiences: Experience[] = [
       "Docker",
       "AWS",
       "Circle CI",
-      "Travis CI"
+      "Travis CI",
     ],
     publicRepos: [
       {
         name: "gitfab2",
-        url: "https://github.com/takeyuwebinc/gitfab2"
+        url: "https://github.com/takeyuwebinc/gitfab2",
       },
       {
         name: "repro-client",
-        url: "https://github.com/itkrt2y/repro-client"
+        url: "https://github.com/itkrt2y/repro-client",
       },
       {
         name: "render_async",
-        url: "https://github.com/itkrt2y/render_async"
-      }
-    ]
+        url: "https://github.com/itkrt2y/render_async",
+      },
+    ],
   },
   {
     from: "Aug 2016",
@@ -60,9 +60,9 @@ const experiences: Experience[] = [
       "Docker",
       "PostgreSQL",
       "Engine Yard",
-      "Circle CI"
+      "Circle CI",
     ],
-    publicRepos: []
+    publicRepos: [],
   },
   {
     from: "Jan 2015",
@@ -76,9 +76,9 @@ const experiences: Experience[] = [
       "MySQL",
       "Elasticsearch",
       "AWS",
-      "Circle CI"
+      "Circle CI",
     ],
-    publicRepos: []
+    publicRepos: [],
   },
   {
     from: "Dec 2014",
@@ -86,14 +86,14 @@ const experiences: Experience[] = [
     company: "FunTeam Inc.",
     as: "Java Engineer",
     techs: ["Java", "Spring", "Struts", "jQuery"],
-    publicRepos: []
-  }
+    publicRepos: [],
+  },
 ];
 
 function Techs({ techs }: { techs: string[] }) {
   return (
     <div className="d-flex flex-wrap mt-1">
-      {techs.map(tech => (
+      {techs.map((tech) => (
         <div
           className="px-3 py-1 border border-gray rounded-1 m-1 f4 text-mono"
           key={tech}
@@ -108,7 +108,7 @@ function Techs({ techs }: { techs: string[] }) {
 function Repos({ repos }: { repos: Repo[] }) {
   return (
     <div className="d-flex flex-wrap mt-1">
-      {repos.map(repo => (
+      {repos.map((repo) => (
         <a
           href={repo.url}
           className="text-white text-underline"
@@ -132,7 +132,7 @@ function Repos({ repos }: { repos: Repo[] }) {
 function ExperienceList() {
   return (
     <div id="experience-listing">
-      {experiences.map(exp => (
+      {experiences.map((exp) => (
         <div className="mb-5" key={exp.company}>
           <div
             className="mb-3"
@@ -188,7 +188,7 @@ function ExperienceList() {
   );
 }
 
-export default function() {
+export default function () {
   return (
     <>
       <Head>
