@@ -1,4 +1,6 @@
-module.exports = {
+const withPreact = require('next-plugin-preact');
+
+module.exports = withPreact({
   exportPathMap: async function () {
     return {
       "/": { page: "/" },
@@ -7,4 +9,7 @@ module.exports = {
       "/this-site": { page: "/this-site" },
     };
   },
-};
+  experimental: {
+    modern: true,
+  },
+});
