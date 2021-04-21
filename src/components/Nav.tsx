@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LinkExternalIcon } from "../components/icons";
+import { LinkExternalIcon } from "./icons";
 
 type NavItems = "Blog" | "Experience" | "Skills" | "This Site" | "Gist";
 
