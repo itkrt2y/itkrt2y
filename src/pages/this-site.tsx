@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { FunctionComponent } from "preact";
-import Nav from "../components/Nav";
-import { title } from "../lib/header";
+import Nav from "~/components/Nav";
+import { title } from "~/lib/header";
 
 const Tech: FunctionComponent<{ name: string; url: string }> = ({
   name,

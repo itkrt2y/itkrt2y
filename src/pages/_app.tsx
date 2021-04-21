@@ -7,7 +7,7 @@ import {
   TwitterIcon,
   LeetCodeIcon,
   MailIcon,
-} from "../components/icons";
+} from "~/components/icons";
 
 const Avatar = () => (
   <Link href="/">

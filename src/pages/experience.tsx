@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Nav from "../components/Nav";
-import { title } from "../lib/header";
-import { GitCommitIcon } from "../components/icons";
+import Nav from "~/components/Nav";
+import { title } from "~//lib/header";
+import { GitCommitIcon } from "~/components/icons";
 
 type Repo = {
   name: string;

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { FunctionComponent } from "preact";
-import Nav from "../components/Nav";
-import { title } from "../lib/header";
+import Nav from "~/components/Nav";
+import { title } from "~/lib/header";
 
 const Title: FunctionComponent = ({ children }) => (
   <h2 className="border-bottom pb-2 mb-3">{children}</h2>
