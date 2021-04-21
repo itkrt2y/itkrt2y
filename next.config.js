@@ -1,7 +1,7 @@
-const withPreact = require('next-plugin-preact');
+const withPreact = require("next-plugin-preact");
 
 module.exports = withPreact({
-  exportPathMap: async function () {
+  async exportPathMap() {
     return {
       "/": { page: "/" },
       "/experience": { page: "/experience" },

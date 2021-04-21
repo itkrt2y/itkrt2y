@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FunctionComponent } from "preact";
 import { LinkExternalIcon } from "./icons";
 
 type NavItems = "Blog" | "Experience" | "Skills" | "This Site" | "Gist";
@@ -27,7 +28,7 @@ const NavItem = ({
   </Link>
 );
 
-export default ({ selected }: { selected: NavItems }) => (
+const Nav: FunctionComponent<{ selected: NavItems }> = ({ selected }) => (
   <nav className="UnderlineNav UnderlineNav--full mb-5" aria-label="Navigation">
     <div className="UnderlineNav-container">
       <div className="UnderlineNav-body" style={{ overflowX: "auto" }}>
@@ -45,3 +46,4 @@ export default ({ selected }: { selected: NavItems }) => (
     </div>
   </nav>
 );
+export default Nav;

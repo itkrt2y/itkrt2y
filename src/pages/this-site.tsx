@@ -1,20 +1,20 @@
 import Head from "next/head";
+import { FunctionComponent } from "preact";
 import Nav from "../components/Nav";
 import { title } from "../lib/header";
 
-function Tech({ name, url }: { name: string; url: string }) {
-  return (
-    <a href={url} className="text-white text-underline f3">
-      {name}
-    </a>
-  );
-}
+const Tech: FunctionComponent<{ name: string; url: string }> = ({
+  name,
+  url,
+}) => (
+  <a href={url} className="text-white text-underline f3">
+    {name}
+  </a>
+);
 
-function TechSpacer() {
-  return <span className="f3 mx-1"> / </span>;
-}
+const TechSpacer = () => <span className="f3 mx-1"> / </span>;
 
-export default function () {
+export default function Page() {
   return (
     <>
       <Head>

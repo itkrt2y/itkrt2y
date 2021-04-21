@@ -2,14 +2,15 @@ import Head from "next/head";
 import Nav from "../components/Nav";
 import { title } from "../lib/header";
 import { GitCommitIcon } from "../components/icons";
+import { FunctionComponent } from "preact";
 
-type Blog = {
+type BlogType = {
   title: string;
   url: string;
   publishedAt: string;
 };
 
-const blogs: Blog[] = [
+const blogs: BlogType[] = [
   {
     title: "Rails + TypeScript + webpack環境構築",
     url: "https://link.medium.com/MT5zu3jyN0",
@@ -27,73 +28,70 @@ const blogs: Blog[] = [
   },
 ];
 
-function PublishedAt({ children }: { children: string }) {
-  return <span style={{ color: "#fafbfc" }}>{children}</span>;
-}
+const PublishedAt: FunctionComponent = ({ children }) => (
+  <span style={{ color: "#fafbfc" }}>{children}</span>
+);
 
-function BlogCard({ title, url }: { title: string; url: string }) {
-  return (
-    <a href={url} className="mb-3 text-white text-underline">
-      <div className="p-3 border border-gray-dark rounded-1">
-        <h4>{title}</h4>
-      </div>
-
-      <style jsx>{`
-        div:hover {
-          opacity: 0.8;
-        }
-      `}</style>
-    </a>
-  );
-}
-
-function Blog({ blog }: { blog: Blog }) {
-  return (
-    <div className="mb-5">
-      <div
-        className="mb-3"
-        style={{ backgroundColor: "#24292e", marginLeft: -24 }}
-      >
-        <GitCommitIcon />
-        <PublishedAt>{blog.publishedAt}</PublishedAt>
-      </div>
-
-      <BlogCard title={blog.title} url={blog.url} />
+const BlogCard: FunctionComponent<{ title: string; url: string }> = ({
+  title,
+  url,
+}) => (
+  <a href={url} className="mb-3 text-white text-underline">
+    <div className="p-3 border border-gray-dark rounded-1">
+      <h4>{title}</h4>
     </div>
-  );
-}
 
-function Blogs({ blogs }: { blogs: Blog[] }) {
-  return (
-    <div id="blogs">
-      {blogs.map((blog) => (
-        <Blog blog={blog} key={blog.title} />
-      ))}
+    <style jsx>{`
+      div:hover {
+        opacity: 0.8;
+      }
+    `}</style>
+  </a>
+);
 
-      <style jsx>{`
-        #blogs {
-          position: relative;
-          padding-left: 18px;
-          padding-bottom: 1px;
-        }
-
-        #blogs:before {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          z-index: -1;
-          display: block;
-          width: 2px;
-          content: "";
-          background-color: #959da5;
-        }
-      `}</style>
+const Blog: FunctionComponent<{ blog: BlogType }> = ({ blog }) => (
+  <div className="mb-5">
+    <div
+      className="mb-3"
+      style={{ backgroundColor: "#24292e", marginLeft: -24 }}
+    >
+      <GitCommitIcon />
+      <PublishedAt>{blog.publishedAt}</PublishedAt>
     </div>
-  );
-}
 
-export default function () {
+    <BlogCard title={blog.title} url={blog.url} />
+  </div>
+);
+
+const Blogs: FunctionComponent<{ blogs: BlogType[] }> = ({ blogs }) => (
+  <div id="blogs">
+    {blogs.map((blog) => (
+      <Blog blog={blog} key={blog.title} />
+    ))}
+
+    <style jsx>{`
+      #blogs {
+        position: relative;
+        padding-left: 18px;
+        padding-bottom: 1px;
+      }
+
+      #blogs:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        width: 2px;
+        content: "";
+        background-color: #959da5;
+      }
+    `}</style>
+  </div>
+);
+
+export default function Page() {
   return (
     <>
       <Head>

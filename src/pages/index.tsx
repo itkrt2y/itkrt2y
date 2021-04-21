@@ -1,27 +1,26 @@
 import Head from "next/head";
+import { FunctionComponent } from "preact";
 import Nav from "../components/Nav";
 import { title } from "../lib/header";
 
-function Title({ children }: { children: string }) {
-  return <h2 className="border-bottom pb-2 mb-3">{children}</h2>;
-}
+const Title: FunctionComponent = ({ children }) => (
+  <h2 className="border-bottom pb-2 mb-3">{children}</h2>
+);
 
-function SkillList({ skills }: { skills: string[] }) {
-  return (
-    <div className="d-flex flex-wrap">
-      {skills.map((skill) => (
-        <div
-          className="px-3 py-1 py-md-2 m-1 m-lg-2 border border-gray rounded-1 f3 text-mono"
-          key={skill}
-        >
-          {skill}
-        </div>
-      ))}
-    </div>
-  );
-}
+const SkillList: FunctionComponent<{ skills: string[] }> = ({ skills }) => (
+  <div className="d-flex flex-wrap">
+    {skills.map((skill) => (
+      <div
+        className="px-3 py-1 py-md-2 m-1 m-lg-2 border border-gray rounded-1 f3 text-mono"
+        key={skill}
+      >
+        {skill}
+      </div>
+    ))}
+  </div>
+);
 
-export default function () {
+export default function Page() {
   return (
     <>
       <Head>

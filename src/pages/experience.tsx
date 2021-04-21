@@ -188,7 +188,7 @@ function ExperienceList() {
   );
 }
 
-export default function () {
+export default function Page() {
   return (
     <>
       <Head>
