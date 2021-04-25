@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Nav from "~/components/Nav";
+import { Nav } from "~/components/Nav";
 import { title } from "~/lib/header";
-import { GitCommitIcon } from "~/components/icons";
 import { FunctionComponent } from "preact";
+import { Timeline } from "~/components/Timeline";
 
 type BlogType = {
   title: string;
@@ -28,67 +28,19 @@ const blogs: BlogType[] = [
   },
 ];
 
-const PublishedAt: FunctionComponent = ({ children }) => (
-  <span style={{ color: "#fafbfc" }}>{children}</span>
-);
-
-const BlogCard: FunctionComponent<{ title: string; url: string }> = ({
-  title,
-  url,
-}) => (
-  <a href={url} className="mb-3 text-white text-underline">
-    <div className="p-3 border border-gray-dark rounded-1">
-      <h4>{title}</h4>
-    </div>
-
-    <style jsx>{`
-      div:hover {
-        opacity: 0.8;
-      }
-    `}</style>
-  </a>
-);
-
-const Blog: FunctionComponent<{ blog: BlogType }> = ({ blog }) => (
-  <div className="mb-5">
-    <div
-      className="mb-3"
-      style={{ backgroundColor: "#24292e", marginLeft: -24 }}
-    >
-      <GitCommitIcon />
-      <PublishedAt>{blog.publishedAt}</PublishedAt>
-    </div>
-
-    <BlogCard title={blog.title} url={blog.url} />
-  </div>
-);
-
 const Blogs: FunctionComponent<{ blogs: BlogType[] }> = ({ blogs }) => (
-  <div id="blogs">
+  <Timeline className="gap-1">
     {blogs.map((blog) => (
-      <Blog blog={blog} key={blog.title} />
+      <Timeline.Item dateStr={blog.publishedAt} key={blog.title}>
+        <a
+          href={blog.url}
+          className="text-blue-200 underline ml-3 w-max hover:opacity-75"
+        >
+          {blog.title}
+        </a>
+      </Timeline.Item>
     ))}
-
-    <style jsx>{`
-      #blogs {
-        position: relative;
-        padding-left: 18px;
-        padding-bottom: 1px;
-      }
-
-      #blogs:before {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-        display: block;
-        width: 2px;
-        content: "";
-        background-color: #959da5;
-      }
-    `}</style>
-  </div>
+  </Timeline>
 );
 
 export default function Page() {

@@ -2,7 +2,6 @@ export const GitHubIcon = () => (
   <svg
     height="24"
     width="24"
-    className="octicon octicon-mark-github v-align-middle"
     fill="#ffffff"
     aria-label="GitHub"
     viewBox="0 0 16 16"
@@ -17,16 +16,8 @@ export const GitHubIcon = () => (
 );
 
 export const TwitterIcon = () => (
-  <svg
-    height="34"
-    width="30"
-    className="v-align-middle"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 360 380"
-    fill="#ffffff"
-    aria-label="Twitter"
-  >
-    <path d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23" />
+  <svg width="20" height="20" fill="#ffffff">
+    <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
   </svg>
 );
 
@@ -35,7 +26,7 @@ export const LeetCodeIcon = () => (
     height="20"
     width="22"
     viewBox="0 0 24 24"
-    className="v-align-middle"
+    fill="#ffffff"
     aria-label="LeetCode"
   >
     <path
@@ -65,35 +56,17 @@ export const MailIcon = () => (
 
 export const GitCommitIcon = () => (
   <svg
-    className="octicon octicon-git-commit"
+    className="octicon octicon-git-commit mr-3"
     viewBox="0 0 14 16"
     version="1.1"
     width="14"
     height="16"
     aria-hidden="true"
     fill="#fafbfc"
-    style={{ marginRight: 11 }}
   >
     <path
       fillRule="evenodd"
       d="M10.86 7c-.45-1.72-2-3-3.86-3-1.86 0-3.41 1.28-3.86 3H0v2h3.14c.45 1.72 2 3 3.86 3 1.86 0 3.41-1.28 3.86-3H14V7h-3.14zM7 10.2c-1.22 0-2.2-.98-2.2-2.2 0-1.22.98-2.2 2.2-2.2 1.22 0 2.2.98 2.2 2.2 0 1.22-.98 2.2-2.2 2.2z"
-    />
-  </svg>
-);
-
-export const LinkExternalIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={`${className} octicon octicon-link-external`}
-    viewBox="0 0 12 16"
-    version="1.1"
-    width="12"
-    height="16"
-    aria-hidden="true"
-    fill="white"
-  >
-    <path
-      fillRule="evenodd"
-      d="M11 10h1v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h3v1H1v10h10v-3zM6 2l2.25 2.25L5 7.5 6.5 9l3.25-3.25L12 8V2H6z"
     />
   </svg>
 );

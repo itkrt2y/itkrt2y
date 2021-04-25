@@ -9,17 +9,26 @@ import {
   MailIcon,
 } from "~/components/icons";
 
+import "tailwindcss/tailwind.css";
+
 const Avatar = () => (
   <Link href="/">
     <a>
       <picture>
-        <source type="image/webp" srcSet="images/avatar.webp" />
-        <source type="image/jpeg" srcSet="images/avatar.jpg" />
+        <source
+          type="image/webp"
+          srcSet="images/avatar.webp"
+          className="w-60 h-60 rounded-full"
+        />
+        <source
+          type="image/jpeg"
+          srcSet="images/avatar.jpg"
+          className="w-60 h-60 rounded-full"
+        />
         <img
-          className="width-full"
           src="images/avatar.jpg"
           alt="avatar"
-          style={{ maxWidth: 272 }}
+          className="w-60 h-60 rounded-full"
         />
       </picture>
     </a>
@@ -27,23 +36,23 @@ const Avatar = () => (
 );
 
 const Icons = () => (
-  <>
-    <a href="https://github.com/itkrt2y" className="mr-2">
+  <div className="flex gap-4 items-center justify-center">
+    <a href="https://github.com/itkrt2y">
       <GitHubIcon />
     </a>
 
-    <a href="https://twitter.com/itkrt2y" className="mx-2">
+    <a href="https://twitter.com/itkrt2y">
       <TwitterIcon />
     </a>
 
-    <a href="https://leetcode.com/itkrt2y" className="mx-2">
+    <a href="https://leetcode.com/itkrt2y">
       <LeetCodeIcon />
     </a>
 
-    <a href="mailto:itkrt2y.591721200@gmail.com" className="ml-2">
+    <a href="mailto:itkrt2y.591721200@gmail.com">
       <MailIcon />
     </a>
-  </>
+  </div>
 );
 
 export default class extends App {
@@ -82,76 +91,38 @@ export default class extends App {
             name="description"
             content="Tatsuya Itakura (@itkrt2y) - Web developer with a passion for creating simple, fast and user friendly services."
           />
-
-          <link
-            href="https://unpkg.com/primer@11.0.0/build/build.css"
-            rel="stylesheet"
-          />
         </Head>
 
-        <div
-          className="d-lg-flex flex-justify-center"
-          style={{ minHeight: "100vh" }}
-        >
-          <div
-            className="col-xl-3 col-lg-4 col-12 px-2 px-md-3 pt-6 pb-7"
-            style={{ backgroundColor: "#2f363d" }}
-          >
-            <div className="d-flex flex-row flex-lg-column flex-content-center flex-items-center p-2">
-              <div className="col-4 col-lg-12 mb-lg-6 text-center">
-                <Avatar />
-              </div>
-
-              <div className="col-8 col-lg-12">
-                <div className="pl-4 pl-md-5 pl-lg-3">
-                  <div className="f1">Tatsuya Itakura</div>
-                  <div className="f3">
-                    <span title="ITaKuRa TaTSUYa">@itkrt2y</span>
-                  </div>
-                  <div className="text-mono text-small mt-3 mt-lg-4">
-                    Web developer with a passion for creating simple, fast and
-                    user friendly services.
-                  </div>
-                </div>
-
-                <div className="mt-2 mt-lg-4 text-lg-center pl-4 pl-md-5 pl-lg-0">
-                  <Icons />
-                </div>
-              </div>
-            </div>
+        <div className="h-screen min-h-[720px] lg:flex text-white">
+          <div className="lg:w-96 lg:h-full py-8 lg:py-0 bg-gray-700">
+            <Profile />
           </div>
 
-          <div className="col-xl-9 col-lg-8 col-12 px-lg-4 py-lg-5">
+          <div className="lg:flex-1 overflow-y-auto bg-gray-800 py-12 px-6">
             <Component {...pageProps} />
           </div>
         </div>
-
-        <style jsx global>{`
-          html,
-          body {
-            min-height: 100vh;
-          }
-
-          body {
-            background-color: #24292e;
-            color: white;
-          }
-        `}</style>
-
-        <style jsx>{`
-          @media (min-width: 545px) {
-            .email.css-truncate-target {
-              max-width: 21vw;
-            }
-          }
-
-          @media (max-width: 768px) {
-            .email.css-truncate-target {
-              max-width: 100%;
-            }
-          }
-        `}</style>
       </>
     );
   }
 }
+
+const Profile = () => (
+  <div className="p-12 flex flex-col items-center gap-6">
+    <Avatar />
+
+    <div className="flex flex-col items-center gap-1">
+      <div className="text-2xl font-medium tracking-wide">Tatsuya Itakura</div>
+      <div className="text-lg font-medium" title="ITaKuRa TaTSUYa">
+        @itkrt2y
+      </div>
+    </div>
+
+    <div className="font-mono text-sm pl-3">
+      Web developer with a passion for creating simple, fast and user friendly
+      services.
+    </div>
+
+    <Icons />
+  </div>
+);

@@ -1,18 +1,18 @@
 import Head from "next/head";
 import { FunctionComponent } from "preact";
-import Nav from "~/components/Nav";
+import { Nav } from "~/components/Nav";
 import { title } from "~/lib/header";
 
 const Tech: FunctionComponent<{ name: string; url: string }> = ({
   name,
   url,
 }) => (
-  <a href={url} className="text-white text-underline f3">
+  <a href={url} className="text-blue-300 hover:text-blue-100 underline">
     {name}
   </a>
 );
 
-const TechSpacer = () => <span className="f3 mx-1"> / </span>;
+const TechSpacer = () => <span className="mr-1">, </span>;
 
 export default function Page() {
   return (
@@ -23,29 +23,36 @@ export default function Page() {
 
       <Nav selected="This Site" />
 
-      <div className="px-3">
-        <div className="mb-5">
-          <h2 className="border-bottom pb-2 mb-4">Repository</h2>
+      <div className="px-3 flex flex-col gap-10">
+        <div className="flex flex-col gap-3">
+          <h2 className="border-b text-xl font-semibold tracking-wider pb-1">
+            Repository
+          </h2>
           <a
             href="https://github.com/itkrt2y/about-me"
-            className="text-white text-underline f3"
+            className="text-blue-300 hover:text-blue-100 underline"
           >
-            itkrt2y / about-me
+            itkrt2y/about-me
           </a>
         </div>
 
-        <div className="my-5">
-          <h2 className="border-bottom pb-2 mb-4">Built with</h2>
-          <Tech name="Next.js" url="https://nextjs.org/" />
-          <TechSpacer />
-          <Tech name="Primer" url="https://primer.style" />
-          <TechSpacer />
-          <Tech
-            name="Firebase Hosting"
-            url="https://firebase.google.com/products/hosting/"
-          />
-          <TechSpacer />
-          <Tech name="Google Domains" url="https://domains.google" />
+        <div className="flex flex-col gap-3">
+          <h2 className="border-b text-xl font-semibold tracking-wider pb-1">
+            Built with
+          </h2>
+
+          <div className="flex gap-1">
+            <Tech name="Next.js" url="https://nextjs.org/" />
+            <TechSpacer />
+            <Tech name="Tailwind CSS" url="https://tailwindcss.com/" />
+            <TechSpacer />
+            <Tech
+              name="Firebase Hosting"
+              url="https://firebase.google.com/products/hosting/"
+            />
+            <TechSpacer />
+            <Tech name="Google Domains" url="https://domains.google" />
+          </div>
         </div>
       </div>
     </>

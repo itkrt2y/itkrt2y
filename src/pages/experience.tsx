@@ -1,7 +1,8 @@
 import Head from "next/head";
-import Nav from "~/components/Nav";
-import { title } from "~//lib/header";
-import { GitCommitIcon } from "~/components/icons";
+import { Nav } from "~/components/Nav";
+import { title } from "~/lib/header";
+import { FunctionComponent } from "preact";
+import { Timeline } from "~/components/Timeline";
 
 type Repo = {
   name: string;
@@ -90,103 +91,68 @@ const experiences: Experience[] = [
   },
 ];
 
-function Techs({ techs }: { techs: string[] }) {
-  return (
-    <div className="d-flex flex-wrap mt-1">
-      {techs.map((tech) => (
-        <div
-          className="px-3 py-1 border border-gray rounded-1 m-1 f4 text-mono"
-          key={tech}
-        >
-          {tech}
-        </div>
-      ))}
-    </div>
-  );
-}
+const Section: FunctionComponent<{ title: string }> = ({ title, children }) => (
+  <div className="flex flex-col gap-2">
+    <h4 className="font-semibold underline text-sm">{title}</h4>
+    {children}
+  </div>
+);
 
-function Repos({ repos }: { repos: Repo[] }) {
-  return (
-    <div className="d-flex flex-wrap mt-1">
-      {repos.map((repo) => (
+const Techs: FunctionComponent<{ techs: string[] }> = ({ techs }) => (
+  <div className="flex flex-wrap gap-2">
+    {techs.map((tech, i) => (
+      <div key={tech}>
+        {tech}
+        {i !== techs.length - 1 && <span> ,</span>}
+      </div>
+    ))}
+  </div>
+);
+
+const Repos: FunctionComponent<{ repos: Repo[] }> = ({ repos }) => (
+  <div className="flex flex-wrap gap-2">
+    {repos.map((repo, i) => (
+      <div key={repo.name}>
         <a
           href={repo.url}
-          className="text-white text-underline"
-          key={repo.name}
+          className="text-blue-300 hover:text-blue-100 underline font-mono"
         >
-          <div className="px-3 py-1 border rounded-1 m-1 f4 text-mono">
-            {repo.name}
-          </div>
+          {repo.name}
         </a>
-      ))}
+        {i !== repos.length - 1 && <span> ,</span>}
+      </div>
+    ))}
+  </div>
+);
 
-      <style jsx>{`
-        a:hover {
-          opacity: 0.8;
-        }
-      `}</style>
-    </div>
-  );
-}
-
-function ExperienceList() {
-  return (
-    <div id="experience-listing">
-      {experiences.map((exp) => (
-        <div className="mb-5" key={exp.company}>
-          <div
-            className="mb-3"
-            style={{ backgroundColor: "#24292e", marginLeft: -24 }}
-          >
-            <GitCommitIcon />
-            <span style={{ color: "#fafbfc" }}>
-              {exp.from} - {exp.to}
-            </span>
+const ExperienceList = () => (
+  <Timeline className="gap-5">
+    {experiences.map((exp) => (
+      <Timeline.Item dateStr={`${exp.from} - ${exp.to}`} key={exp.company}>
+        <div className="pl-4 flex flex-col gap-3 divide-y">
+          <div className="flex flex-col gap-1">
+            <h3 className="text-lg font-semibold tracking-wider">
+              {exp.company}
+            </h3>
+            <div className="text-sm font-mono">{exp.as}</div>
           </div>
 
-          <div className="px-3 py-4 border rounded-1">
-            <div className="border-bottom">
-              <h3>{exp.company}</h3>
-              <div className="mb-2">{exp.as}</div>
-            </div>
-
-            <div className="mt-4">
-              <h4 className="text-normal">Techs</h4>
+          <div className="pt-5 flex flex-col gap-6">
+            <Section title="Techs">
               <Techs techs={exp.techs} />
-            </div>
+            </Section>
 
-            {exp.publicRepos.length > 0 ? (
-              <div className="mt-4">
-                <h4 className="text-normal">Public Repositories</h4>
+            {exp.publicRepos.length > 0 && (
+              <Section title="Repositories">
                 <Repos repos={exp.publicRepos} />
-              </div>
-            ) : null}
+              </Section>
+            )}
           </div>
         </div>
-      ))}
-
-      <style jsx>{`
-        #experience-listing {
-          position: relative;
-          padding-left: 18px;
-          padding-bottom: 1px;
-        }
-
-        #experience-listing:before {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          z-index: -1;
-          display: block;
-          width: 2px;
-          content: "";
-          background-color: #959da5;
-        }
-      `}</style>
-    </div>
-  );
-}
+      </Timeline.Item>
+    ))}
+  </Timeline>
+);
 
 export default function Page() {
   return (
