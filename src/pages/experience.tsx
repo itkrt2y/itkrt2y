@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Nav } from "~/components/Nav";
 import { title } from "~/lib/header";
 import { FunctionComponent } from "preact";
 import { Timeline } from "~/components/Timeline";
@@ -160,8 +159,6 @@ export default function Page() {
       <Head>
         <title>{title("Experience")}</title>
       </Head>
-
-      <Nav selected="Experience" />
 
       <div className="px-3">
         <ExperienceList />

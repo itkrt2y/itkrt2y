@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { FunctionComponent } from "preact";
-import { Nav } from "~/components/Nav";
 import { title } from "~/lib/header";
 
 const Tech: FunctionComponent<{ name: string; url: string }> = ({
@@ -20,8 +19,6 @@ export default function Page() {
       <Head>
         <title>{title("This Site")}</title>
       </Head>
-
-      <Nav selected="This Site" />
 
       <div className="px-3 flex flex-col gap-10">
         <div className="flex flex-col gap-3">

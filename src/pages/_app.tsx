@@ -10,6 +10,7 @@ import {
 } from "~/components/icons";
 
 import "tailwindcss/tailwind.css";
+import { Nav } from "~/components/Nav";
 
 const Avatar = () => (
   <Link href="/">
@@ -98,8 +99,11 @@ export default class extends App {
             <Profile />
           </div>
 
-          <div className="lg:flex-1 overflow-y-auto bg-gray-800 py-12 px-6">
-            <Component {...pageProps} />
+          <div className="lg:flex-1 overflow-y-auto bg-gray-800">
+            <Nav />
+            <div className="px-4 lg:px-12">
+              <Component {...pageProps} />
+            </div>
           </div>
         </div>
       </>

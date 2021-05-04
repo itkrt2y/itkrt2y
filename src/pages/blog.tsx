@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Nav } from "~/components/Nav";
 import { title } from "~/lib/header";
 import { FunctionComponent } from "preact";
 import { Timeline } from "~/components/Timeline";
@@ -34,7 +33,7 @@ const Blogs: FunctionComponent<{ blogs: BlogType[] }> = ({ blogs }) => (
       <Timeline.Item dateStr={blog.publishedAt} key={blog.title}>
         <a
           href={blog.url}
-          className="text-blue-200 underline ml-3 w-max hover:opacity-75"
+          className="text-blue-300 hover:text-blue-100 underline ml-3 w-max"
         >
           {blog.title}
         </a>
@@ -49,8 +48,6 @@ export default function Page() {
       <Head>
         <title>{title("Blog")}</title>
       </Head>
-
-      <Nav selected="Blog" />
 
       <div className="px-3">
         <Blogs blogs={blogs} />

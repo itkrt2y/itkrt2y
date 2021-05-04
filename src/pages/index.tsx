@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { FunctionComponent } from "preact";
-import { Nav } from "~/components/Nav";
 import { title } from "~/lib/header";
 
 const SkillList: FunctionComponent<{ title: string; skills: string[] }> = ({
@@ -28,8 +27,6 @@ export default function Page() {
       <Head>
         <title>{title()}</title>
       </Head>
-
-      <Nav selected="Skills" />
 
       <div className="flex flex-col gap-8">
         <SkillList
