@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { FunctionComponent } from "preact";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/dist/client/router";
+import Link from "next/link";
+import { FunctionComponent } from "preact";
 
 type NavItems = "Blog" | "Experience" | "Skills" | "This Site" | "Gist";
 

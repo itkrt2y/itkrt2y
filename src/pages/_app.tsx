@@ -1,7 +1,8 @@
-import * as React from "react";
 import App from "next/app";
 import Head from "next/head";
 import Link from "next/link";
+import * as React from "react";
+import { Nav } from "~/components/Nav";
 import {
   GitHubIcon,
   TwitterIcon,
@@ -10,7 +11,6 @@ import {
 } from "~/components/icons";
 
 import "tailwindcss/tailwind.css";
-import { Nav } from "~/components/Nav";
 
 const Avatar = () => (
   <Link href="/">

@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { title } from "~/lib/header";
 import { FunctionComponent } from "preact";
-import { Timeline } from "~/components/Timeline";
 import { Section } from "~/components/Section";
+import { Timeline } from "~/components/Timeline";
+import { title } from "~/lib/header";
 
 type Repo = {
   name: string;

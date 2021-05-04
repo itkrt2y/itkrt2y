@@ -1,7 +1,7 @@
 import Head from "next/head";
-import { title } from "~/lib/header";
 import { FunctionComponent } from "preact";
 import { Timeline } from "~/components/Timeline";
+import { title } from "~/lib/header";
 
 type BlogType = {
   title: string;

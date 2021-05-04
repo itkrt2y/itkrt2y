@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { FunctionComponent } from "preact";
-import { title } from "~/lib/header";
 import { Section } from "~/components/Section";
+import { title } from "~/lib/header";
 
 const skills = {
   awesome: [
