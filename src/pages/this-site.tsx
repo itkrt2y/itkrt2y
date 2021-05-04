@@ -40,7 +40,7 @@ export default function Page() {
         <title>{title("This Site")}</title>
       </Head>
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-8">
         <Section title="Repository">
           <a
             href="https://github.com/itkrt2y/about-me"

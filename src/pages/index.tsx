@@ -60,7 +60,7 @@ export default function Page() {
         <title>{title()}</title>
       </Head>
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-8">
         <SkillList title="Awesome" skills={skills.awesome} />
         <SkillList title="Great" skills={skills.great} />
         <SkillList title="Good" skills={skills.good} />

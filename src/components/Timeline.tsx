@@ -7,7 +7,10 @@ type Props = FunctionComponent<HTMLAttributes<HTMLDivElement>> & {
 };
 
 export const Timeline: Props = ({ className, ...props }) => (
-  <div {...props} className={`${className} flex flex-col border-l pl-4`} />
+  <div
+    {...props}
+    className={`${className} flex flex-col border-l gap-1 pl-4`}
+  />
 );
 
 const TimelineItem: FunctionComponent<{ dateStr: string }> = ({

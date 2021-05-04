@@ -28,7 +28,7 @@ const blogs: BlogType[] = [
 ];
 
 const Blogs: FunctionComponent<{ blogs: BlogType[] }> = ({ blogs }) => (
-  <Timeline className="gap-1">
+  <Timeline>
     {blogs.map((blog) => (
       <Timeline.Item dateStr={blog.publishedAt} key={blog.title}>
         <a

@@ -126,7 +126,7 @@ const Repos: FunctionComponent<{ repos: Repo[] }> = ({ repos }) => (
 );
 
 const ExperienceList = () => (
-  <Timeline className="gap-5">
+  <Timeline>
     {experiences.map((exp) => (
       <Timeline.Item dateStr={`${exp.from} - ${exp.to}`} key={exp.company}>
         <Section title={exp.company} subtitle={exp.as}>
