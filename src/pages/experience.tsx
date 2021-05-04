@@ -20,20 +20,38 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
+    from: "Jan 2020",
+    to: "Current",
+    company: "Repro inc.",
+    as: "",
+    techs: [
+      "Ruby on Rails",
+      "Go",
+      "Java",
+      "Kafka",
+      "TypeScript",
+      "Preact",
+      "Vue",
+      "MySQL",
+      "Docker",
+      "AWS",
+    ],
+    publicRepos: [],
+  },
+  {
     from: "Feb 2017",
     to: "May 2019",
     company: "Takeyu Web inc.",
     as: "Ruby on Rails / Frontend Engineer",
     techs: [
       "Ruby on Rails",
+      "TypeScript",
       "React",
       "PostgreSQL",
       "MySQL",
       "Elasticsearch",
       "Docker",
       "AWS",
-      "Circle CI",
-      "Travis CI",
     ],
     publicRepos: [
       {
