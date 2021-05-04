@@ -2,6 +2,7 @@ import Head from "next/head";
 import { title } from "~/lib/header";
 import { FunctionComponent } from "preact";
 import { Timeline } from "~/components/Timeline";
+import { Section } from "~/components/Section";
 
 type Repo = {
   name: string;
@@ -90,7 +91,7 @@ const experiences: Experience[] = [
   },
 ];
 
-const Section: FunctionComponent<{ title: string }> = ({ title, children }) => (
+const Content: FunctionComponent<{ title: string }> = ({ title, children }) => (
   <div className="flex flex-col gap-2">
     <h4 className="font-semibold underline text-sm">{title}</h4>
     {children}
@@ -128,26 +129,17 @@ const ExperienceList = () => (
   <Timeline className="gap-5">
     {experiences.map((exp) => (
       <Timeline.Item dateStr={`${exp.from} - ${exp.to}`} key={exp.company}>
-        <div className="pl-4 flex flex-col gap-3 divide-y">
-          <div className="flex flex-col gap-1">
-            <h3 className="text-lg font-semibold tracking-wider">
-              {exp.company}
-            </h3>
-            <div className="text-sm font-mono">{exp.as}</div>
-          </div>
+        <Section title={exp.company} subtitle={exp.as}>
+          <Content title="Techs">
+            <Techs techs={exp.techs} />
+          </Content>
 
-          <div className="pt-5 flex flex-col gap-6">
-            <Section title="Techs">
-              <Techs techs={exp.techs} />
-            </Section>
-
-            {exp.publicRepos.length > 0 && (
-              <Section title="Repositories">
-                <Repos repos={exp.publicRepos} />
-              </Section>
-            )}
-          </div>
-        </div>
+          {exp.publicRepos.length > 0 && (
+            <Content title="Repositories">
+              <Repos repos={exp.publicRepos} />
+            </Content>
+          )}
+        </Section>
       </Timeline.Item>
     ))}
   </Timeline>

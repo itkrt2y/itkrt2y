@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { FunctionComponent } from "preact";
+import { Section } from "~/components/Section";
 import { title } from "~/lib/header";
 
 type TechType = { name: string; url: string };
@@ -39,26 +40,19 @@ export default function Page() {
         <title>{title("This Site")}</title>
       </Head>
 
-      <div className="px-3 flex flex-col gap-10">
-        <div className="flex flex-col gap-3">
-          <h2 className="border-b text-xl font-semibold tracking-wider pb-1">
-            Repository
-          </h2>
+      <div className="flex flex-col gap-5">
+        <Section title="Repository">
           <a
             href="https://github.com/itkrt2y/about-me"
             className="text-blue-300 hover:text-blue-100 underline"
           >
             itkrt2y/about-me
           </a>
-        </div>
+        </Section>
 
-        <div className="flex flex-col gap-3">
-          <h2 className="border-b text-xl font-semibold tracking-wider pb-1">
-            Built with
-          </h2>
-
+        <Section title="Built with">
           <TechList techs={techs} />
-        </div>
+        </Section>
       </div>
     </>
   );

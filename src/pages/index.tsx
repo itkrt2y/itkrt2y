@@ -1,15 +1,47 @@
 import Head from "next/head";
 import { FunctionComponent } from "preact";
 import { title } from "~/lib/header";
+import { Section } from "~/components/Section";
+
+const skills = {
+  awesome: [
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "React",
+    "Preact",
+    "Next.js",
+    "Vite",
+    "Ruby",
+    "Ruby on Rails",
+  ],
+  great: [
+    "Express.js",
+    "Vue",
+    "Nuxt.js",
+    "Docker",
+    "PostgreSQL",
+    "Firebase",
+    "Elasticsearch",
+  ],
+  good: ["AWS", "GCP", "Java", "Go", "C", "MySQL", "Redis"],
+  interests: [
+    "WebAssembly",
+    "WASI",
+    "Rust",
+    "C++",
+    "Make Programming Language",
+    "Make OS",
+    "Make RDBMS",
+    "Make fulltext search engine",
+  ],
+};
 
 const SkillList: FunctionComponent<{ title: string; skills: string[] }> = ({
   title,
   skills,
 }) => (
-  <div className="flex flex-col gap-3">
-    <h2 className="border-b pb-1 text-lg font-semibold tracking-wide">
-      {title}
-    </h2>
+  <Section title={title}>
     <div className="flex flex-wrap gap-2">
       {skills.map((skill, i) => (
         <div key={skill}>
@@ -18,7 +50,7 @@ const SkillList: FunctionComponent<{ title: string; skills: string[] }> = ({
         </div>
       ))}
     </div>
-  </div>
+  </Section>
 );
 
 export default function Page() {
@@ -28,53 +60,11 @@ export default function Page() {
         <title>{title()}</title>
       </Head>
 
-      <div className="flex flex-col gap-8">
-        <SkillList
-          title="Awesome"
-          skills={[
-            "JavaScript",
-            "TypeScript",
-            "Node.js",
-            "React",
-            "Preact",
-            "Next.js",
-            "Vite",
-            "Ruby",
-            "Ruby on Rails",
-          ]}
-        />
-
-        <SkillList
-          title="Great"
-          skills={[
-            "Express.js",
-            "Vue",
-            "Nuxt.js",
-            "Docker",
-            "PostgreSQL",
-            "Firebase",
-            "Elasticsearch",
-          ]}
-        />
-
-        <SkillList
-          title="Good"
-          skills={["AWS", "GCP", "Java", "Go", "C", "MySQL", "Redis"]}
-        />
-
-        <SkillList
-          title="Interests"
-          skills={[
-            "WebAssembly",
-            "WASI",
-            "Rust",
-            "C++",
-            "Make Programming Language",
-            "Make OS",
-            "Make RDBMS",
-            "Make fulltext search engine",
-          ]}
-        />
+      <div className="flex flex-col gap-5">
+        <SkillList title="Awesome" skills={skills.awesome} />
+        <SkillList title="Great" skills={skills.great} />
+        <SkillList title="Good" skills={skills.good} />
+        <SkillList title="Interests" skills={skills.interests} />
       </div>
     </>
   );
