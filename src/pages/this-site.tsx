@@ -2,16 +2,35 @@ import Head from "next/head";
 import { FunctionComponent } from "preact";
 import { title } from "~/lib/header";
 
-const Tech: FunctionComponent<{ name: string; url: string }> = ({
-  name,
-  url,
-}) => (
-  <a href={url} className="text-blue-300 hover:text-blue-100 underline">
-    {name}
-  </a>
-);
+type TechType = { name: string; url: string };
 
-const TechSpacer = () => <span className="mr-1">, </span>;
+const techs: readonly TechType[] = [
+  { name: "Next.js", url: "https://nextjs.org/" },
+  { name: "Tailwind CSS", url: "https://tailwindcss.com/" },
+  {
+    name: "Firebase Hosting",
+    url: "https://firebase.google.com/products/hosting/",
+  },
+  { name: "Google Domains", url: "https://domains.google" },
+];
+
+const TechList: FunctionComponent<{
+  techs: readonly TechType[];
+}> = ({ techs }) => (
+  <div className="flex gap-2">
+    {techs.map((tech, i) => (
+      <div key={tech.name}>
+        <a
+          href={tech.url}
+          className="text-blue-300 hover:text-blue-100 underline"
+        >
+          {tech.name}
+        </a>
+        {i !== techs.length - 1 && <span> ,</span>}
+      </div>
+    ))}
+  </div>
+);
 
 export default function Page() {
   return (
@@ -38,18 +57,7 @@ export default function Page() {
             Built with
           </h2>
 
-          <div className="flex gap-1">
-            <Tech name="Next.js" url="https://nextjs.org/" />
-            <TechSpacer />
-            <Tech name="Tailwind CSS" url="https://tailwindcss.com/" />
-            <TechSpacer />
-            <Tech
-              name="Firebase Hosting"
-              url="https://firebase.google.com/products/hosting/"
-            />
-            <TechSpacer />
-            <Tech name="Google Domains" url="https://domains.google" />
-          </div>
+          <TechList techs={techs} />
         </div>
       </div>
     </>
