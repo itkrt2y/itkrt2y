@@ -1,7 +1,11 @@
-import Head from "next/head";
-import { FunctionComponent } from "preact";
-import { Timeline } from "~/components/Timeline";
-import { title } from "~/lib/header";
+/** @jsx h */
+import { h, type FunctionComponent } from "preact";
+import { Head } from "$fresh/runtime.ts";
+import { PageProps } from "$fresh/server.ts";
+import { tw } from "@twind";
+import { Timeline } from "../components/Timeline.tsx";
+import { title } from "../lib/header.ts";
+import { Layout } from "../layout.tsx";
 
 type BlogType = {
   title: string;
@@ -27,13 +31,27 @@ const blogs: BlogType[] = [
   },
 ];
 
+export default function Page(props: PageProps) {
+  return (
+    <Layout url={props.url}>
+      <Head>
+        <title>{title("Blog")}</title>
+      </Head>
+
+      <div class={tw`px-3`}>
+        <Blogs blogs={blogs} />
+      </div>
+    </Layout>
+  );
+}
+
 const Blogs: FunctionComponent<{ blogs: BlogType[] }> = ({ blogs }) => (
   <Timeline>
     {blogs.map((blog) => (
       <Timeline.Item dateStr={blog.publishedAt} key={blog.title}>
         <a
           href={blog.url}
-          className="text-blue-300 hover:text-blue-100 underline ml-3 w-max"
+          class={tw`text-blue-300 hover:text-blue-100 underline ml-3 w-max`}
         >
           {blog.title}
         </a>
@@ -41,17 +59,3 @@ const Blogs: FunctionComponent<{ blogs: BlogType[] }> = ({ blogs }) => (
     ))}
   </Timeline>
 );
-
-export default function Page() {
-  return (
-    <>
-      <Head>
-        <title>{title("Blog")}</title>
-      </Head>
-
-      <div className="px-3">
-        <Blogs blogs={blogs} />
-      </div>
-    </>
-  );
-}

@@ -1,8 +1,12 @@
-import Head from "next/head";
-import { FunctionComponent } from "preact";
-import { Section } from "~/components/Section";
-import { Timeline } from "~/components/Timeline";
-import { title } from "~/lib/header";
+/** @jsx h */
+import { h, type FunctionComponent } from "preact";
+import { Head } from "$fresh/runtime.ts";
+import { PageProps } from "$fresh/server.ts";
+import { tw } from "@twind";
+import { Section } from "../components/Section.tsx";
+import { Timeline } from "../components/Timeline.tsx";
+import { title } from "../lib/header.ts";
+import { Layout } from "../layout.tsx";
 
 type Repo = {
   name: string;
@@ -109,15 +113,29 @@ const experiences: Experience[] = [
   },
 ];
 
+export default function Page(props: PageProps) {
+  return (
+    <Layout url={props.url}>
+      <Head>
+        <title>{title("Experience")}</title>
+      </Head>
+
+      <div class={tw`px-3`}>
+        <ExperienceList />
+      </div>
+    </Layout>
+  );
+}
+
 const Content: FunctionComponent<{ title: string }> = ({ title, children }) => (
-  <div className="flex flex-col gap-2">
-    <h4 className="font-semibold underline text-sm">{title}</h4>
+  <div class={tw`flex flex-col gap-2`}>
+    <h4 class={tw`font-semibold underline text-sm`}>{title}</h4>
     {children}
   </div>
 );
 
 const Techs: FunctionComponent<{ techs: string[] }> = ({ techs }) => (
-  <div className="flex flex-wrap gap-2">
+  <div class={tw`flex flex-wrap gap-2`}>
     {techs.map((tech, i) => (
       <div key={tech}>
         {tech}
@@ -128,12 +146,12 @@ const Techs: FunctionComponent<{ techs: string[] }> = ({ techs }) => (
 );
 
 const Repos: FunctionComponent<{ repos: Repo[] }> = ({ repos }) => (
-  <div className="flex flex-wrap gap-2">
+  <div class={tw`flex flex-wrap gap-2`}>
     {repos.map((repo, i) => (
       <div key={repo.name}>
         <a
           href={repo.url}
-          className="text-blue-300 hover:text-blue-100 underline font-mono"
+          class={tw`text-blue-300 hover:text-blue-100 underline font-mono`}
         >
           {repo.name}
         </a>
@@ -162,17 +180,3 @@ const ExperienceList = () => (
     ))}
   </Timeline>
 );
-
-export default function Page() {
-  return (
-    <>
-      <Head>
-        <title>{title("Experience")}</title>
-      </Head>
-
-      <div className="px-3">
-        <ExperienceList />
-      </div>
-    </>
-  );
-}
