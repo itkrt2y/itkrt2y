@@ -1,7 +1,6 @@
 /** @jsx h */
 import { h, type FunctionComponent } from "preact";
 import { tw } from "@twind";
-// import { ExternalLinkIcon } from "@heroicons/react/outline";
 
 type NavItems = "Blog" | "Experience" | "Skills" | "This Site" | "Gist";
 
@@ -30,18 +29,33 @@ const NavItem = ({
   name: NavItems;
   href: string;
   external?: boolean;
-}) => {
-  return (
-    <a
-      href={href}
-      class={tw`flex-1 flex items-center justify-center text-white text-sm whitespace-nowrap p-3 ${
-        url.pathname === href
-          ? "border-b-4 -mb-px border-yellow-600"
-          : "border-b border-white"
-      }`}
-    >
-      {name}
-      {/* {external && <ExternalLinkIcon className="w-4 h-4 ml-2 -mb-1" />} */}
-    </a>
-  );
-};
+}) => (
+  <a
+    href={href}
+    class={tw`flex-1 flex gap-1 items-center justify-center text-white text-sm whitespace-nowrap p-3 ${
+      url.pathname === href
+        ? "border-b-4 -mb-px border-yellow-600"
+        : "border-b border-white"
+    }`}
+  >
+    {name}
+    {external && <ExternalIcon />}
+  </a>
+);
+
+const ExternalIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class={tw`w-4 h-4`}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+    />
+  </svg>
+);
