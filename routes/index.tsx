@@ -20,8 +20,8 @@ const skills = {
     "Ruby on Rails",
     "GraphQL",
   ],
-  great: ["Java", "Docker", "MySQL", "PostgreSQL", "Elasticsearch"],
-  good: ["AWS", "GCP", "Rust", "Go", "Vue", "Redis", "Cassandra"],
+  great: ["Docker", "MySQL", "PostgreSQL", "Elasticsearch"],
+  good: ["AWS", "GCP", "Rust", "Go", "Java", "Vue", "Redis", "Cassandra"],
   interests: [
     "WebAssembly",
     "WASI",
