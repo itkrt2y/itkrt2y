@@ -10,10 +10,10 @@ import { Layout } from "../layout.tsx";
 type TechType = { name: string; url: string };
 
 const techs: readonly TechType[] = [
-  { name: "Next.js", url: "https://nextjs.org/" },
-  { name: "Tailwind CSS", url: "https://tailwindcss.com/" },
+  { name: "Fresh", url: "https://fresh.deno.dev/" },
+  { name: "Twind", url: "https://twind.dev/" },
   {
-    name: "Firebase Hosting",
+    name: "Deno deploy",
     url: "https://firebase.google.com/products/hosting/",
   },
   { name: "Google Domains", url: "https://domains.google" },
