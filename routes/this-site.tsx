@@ -10,6 +10,7 @@ import { title } from "@lib/header.ts";
 type TechType = { name: string; url: string };
 
 const techs: readonly TechType[] = [
+  { name: "Deno", url: "https://deno.land/" },
   { name: "Fresh", url: "https://fresh.deno.dev/" },
   { name: "Twind", url: "https://twind.dev/" },
   {
