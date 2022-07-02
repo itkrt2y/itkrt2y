@@ -53,6 +53,7 @@ const TechList: FunctionComponent<{
         <a
           href={tech.url}
           class={tw`text-blue-300 hover:text-blue-100 underline`}
+          target="_blank"
         >
           {tech.name}
         </a>
