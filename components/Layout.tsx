@@ -17,6 +17,26 @@ export const Layout: FunctionComponent<{ url: URL }> = ({ url, children }) => (
   </div>
 );
 
+const Profile = () => (
+  <div class={tw`p-12 flex flex-col items-center gap-6`}>
+    <Avatar />
+
+    <div class={tw`flex flex-col items-center gap-1`}>
+      <div class={tw`text-2xl font-medium tracking-wide`}>Tatsuya Itakura</div>
+      <div class={tw`text-lg font-medium`} title="ITaKuRa TaTSUYa">
+        @itkrt2y
+      </div>
+    </div>
+
+    <div class={tw`font-mono text-sm pl-3`}>
+      Web developer with a passion for creating simple, fast and user friendly
+      services.
+    </div>
+
+    <Icons />
+  </div>
+);
+
 const Avatar = () => (
   <a href="/">
     <picture>
@@ -52,25 +72,5 @@ const Icons = () => (
     <a href="mailto:itkrt2y.591721200@gmail.com">
       <MailIcon />
     </a>
-  </div>
-);
-
-const Profile = () => (
-  <div class={tw`p-12 flex flex-col items-center gap-6`}>
-    <Avatar />
-
-    <div class={tw`flex flex-col items-center gap-1`}>
-      <div class={tw`text-2xl font-medium tracking-wide`}>Tatsuya Itakura</div>
-      <div class={tw`text-lg font-medium`} title="ITaKuRa TaTSUYa">
-        @itkrt2y
-      </div>
-    </div>
-
-    <div class={tw`font-mono text-sm pl-3`}>
-      Web developer with a passion for creating simple, fast and user friendly
-      services.
-    </div>
-
-    <Icons />
   </div>
 );
