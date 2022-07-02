@@ -33,10 +33,8 @@ const NavItem = ({
 }) => (
   <a
     href={href}
-    class={tw`flex-1 flex gap-1 items-center justify-center text-white text-sm whitespace-nowrap p-3 ${
-      url.pathname === href
-        ? "border-b-4 -mb-px border-yellow-600"
-        : "border-b border-white"
+    class={tw`flex-1 flex gap-1 items-center justify-center text-white text-sm whitespace-nowrap p-3 border-b-2 ${
+      url.pathname === href ? "border-yellow-600" : "border-gray-600"
     }`}
   >
     {name}
