@@ -27,7 +27,7 @@ const experiences: Experience[] = [
     from: "Jan 2020",
     to: "Current",
     company: "Repro inc.",
-    as: "",
+    as: "Frontend / Ruby on Rails / Go / Java Engineer",
     techs: [
       "Ruby on Rails",
       "Go",
