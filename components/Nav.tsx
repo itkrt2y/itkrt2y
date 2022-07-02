@@ -10,13 +10,13 @@ export const Nav: FunctionComponent<{ url: URL }> = ({ url }) => (
     <NavItem url={url} name="Skills" href="/" />
     <NavItem url={url} name="Experience" href="/experience" />
     <NavItem url={url} name="Blog" href="/blog" />
+    <NavItem url={url} name="This Site" href="/this-site" />
     <NavItem
       url={url}
       name="Gist"
       href="https://gist.github.com/itkrt2y"
       external={true}
     />
-    <NavItem url={url} name="This Site" href="/this-site" />
   </nav>
 );
 
