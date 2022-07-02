@@ -16,7 +16,7 @@ const TimelineItem: FunctionComponent<{ dateStr: string }> = ({
   children,
 }) => (
   <div class={tw`flex flex-col`}>
-    <div class={tw`-ml-6 flex items-center bg-gray-800`}>
+    <div class={tw`-ml-6 flex items-center`}>
       <GitCommitIcon />
       <span class={tw`text-sm`}>{dateStr}</span>
     </div>

@@ -6,11 +6,11 @@ import { Nav } from "./Nav.tsx";
 
 export const Layout: FunctionComponent<{ url: URL }> = ({ url, children }) => (
   <div class={tw`h-screen min-h-[720px] lg:flex text-white`}>
-    <div class={tw`lg:w-96 lg:h-full py-8 lg:py-0 bg-gray-700`}>
+    <div class={tw`lg:w-96 lg:h-full py-8 lg:py-0 bg-gray-800`}>
       <Profile />
     </div>
 
-    <div class={tw`lg:flex-1 overflow-y-auto bg-gray-800`}>
+    <div class={tw`lg:flex-1 overflow-y-auto bg-gray-900`}>
       <Nav url={url} />
       <div class={tw`px-4 lg:px-12`}>{children}</div>
     </div>
