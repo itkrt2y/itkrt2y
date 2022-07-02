@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h, type JSX, type FunctionComponent } from "preact";
 import { tw } from "@twind";
-import { GitCommitIcon } from "../components/icons.tsx";
+import { GitCommitIcon } from "./icons.tsx";
 
 type Props = FunctionComponent<JSX.HTMLAttributes<HTMLDivElement>> & {
   Item: FunctionComponent<{ dateStr: string }>;

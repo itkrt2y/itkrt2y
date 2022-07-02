@@ -3,9 +3,9 @@ import { h, type FunctionComponent } from "preact";
 import { Head } from "$fresh/runtime.ts";
 import { PageProps } from "$fresh/server.ts";
 import { tw } from "@twind";
-import { Layout } from "../components/Layout.tsx";
-import { Section } from "../components/Section.tsx";
-import { title } from "../lib/header.ts";
+import { Layout } from "@components/Layout.tsx";
+import { Section } from "@components/Section.tsx";
+import { title } from "@lib/header.ts";
 
 const skills = {
   awesome: [
