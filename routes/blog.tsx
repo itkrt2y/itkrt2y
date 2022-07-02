@@ -5,7 +5,7 @@ import { PageProps } from "$fresh/server.ts";
 import { tw } from "@twind";
 import { Timeline } from "../components/Timeline.tsx";
 import { title } from "../lib/header.ts";
-import { Layout } from "../layout.tsx";
+import { Layout } from "../components/Layout.tsx";
 
 type BlogType = {
   title: string;

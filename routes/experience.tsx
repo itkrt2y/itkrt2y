@@ -6,7 +6,7 @@ import { tw } from "@twind";
 import { Section } from "../components/Section.tsx";
 import { Timeline } from "../components/Timeline.tsx";
 import { title } from "../lib/header.ts";
-import { Layout } from "../layout.tsx";
+import { Layout } from "../components/Layout.tsx";
 
 type Repo = {
   name: string;

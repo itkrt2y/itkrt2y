@@ -5,7 +5,7 @@ import { PageProps } from "$fresh/server.ts";
 import { tw } from "@twind";
 import { Section } from "../components/Section.tsx";
 import { title } from "../lib/header.ts";
-import { Layout } from "../layout.tsx";
+import { Layout } from "../components/Layout.tsx";
 
 type TechType = { name: string; url: string };
 

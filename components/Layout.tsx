@@ -1,13 +1,8 @@
 /** @jsx h */
 import { h, type FunctionComponent } from "preact";
-import {
-  GitHubIcon,
-  LeetCodeIcon,
-  MailIcon,
-  TwitterIcon,
-} from "./components/icons.tsx";
+import { GitHubIcon, LeetCodeIcon, MailIcon, TwitterIcon } from "./icons.tsx";
 import { tw } from "@twind";
-import { Nav } from "./components/Nav.tsx";
+import { Nav } from "./Nav.tsx";
 
 export const Layout: FunctionComponent<{ url: URL }> = ({ url, children }) => (
   <div class={tw`h-screen min-h-[720px] lg:flex text-white`}>
