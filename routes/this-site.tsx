@@ -33,7 +33,7 @@ export default function Page(props: PageProps) {
             href="https://github.com/itkrt2y/about-me"
             class={tw`text-blue-300 hover:text-blue-100 underline`}
           >
-            itkrt2y/about-me
+            itkrt2y/itkrt2y
           </a>
         </Section>
 
