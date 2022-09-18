@@ -1,12 +1,11 @@
-/** @jsx h */
-import { h, type FunctionComponent } from "preact";
-import { tw } from "@twind";
+import { type FunctionComponent } from "preact";
+import { tw } from "twind";
 import { ExternalIcon } from "./icons.tsx";
 
 type NavItems = "BLOG" | "EXPERIENCE" | "SKILLS" | "THIS SITE" | "Gist";
 
 export const Nav: FunctionComponent<{ url: URL }> = ({ url }) => (
-  <nav class={tw`flex w-full mb-10`} aria-label="Navigation">
+  <nav class="flex w-full mb-10" aria-label="Navigation">
     <NavItem url={url} name="SKILLS" href="/" />
     <NavItem url={url} name="EXPERIENCE" href="/experience" />
     <NavItem url={url} name="BLOG" href="/blog" />

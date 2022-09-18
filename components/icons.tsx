@@ -1,7 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
-
 export const GitHubIcon = () => (
   <svg
     height="24"
@@ -44,7 +40,7 @@ export const MailIcon = () => (
   <svg
     height="26"
     width="24"
-    class={tw`octicon octicon-mail mr-2 v-align-middle`}
+    class="octicon octicon-mail mr-2 v-align-middle"
     fill="#ffffff"
     aria-label="email"
     viewBox="0 0 14 16"
@@ -60,7 +56,7 @@ export const MailIcon = () => (
 
 export const GitCommitIcon = () => (
   <svg
-    class={tw`octicon octicon-git-commit mr-3`}
+    class="octicon octicon-git-commit mr-3"
     viewBox="0 0 14 16"
     version="1.1"
     width="14"
@@ -78,7 +74,7 @@ export const GitCommitIcon = () => (
 export const ExternalIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class={tw`w-4 h-4`}
+    class="w-4 h-4"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"

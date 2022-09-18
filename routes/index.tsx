@@ -1,8 +1,6 @@
-/** @jsx h */
-import { h, type FunctionComponent } from "preact";
+import { type FunctionComponent } from "preact";
 import { Head } from "$fresh/runtime.ts";
 import { PageProps } from "$fresh/server.ts";
-import { tw } from "@twind";
 import { Layout } from "@components/Layout.tsx";
 import { Section } from "@components/Section.tsx";
 import { title } from "@lib/header.ts";
@@ -41,7 +39,7 @@ export default function Page(props: PageProps) {
         <title>{title()}</title>
       </Head>
 
-      <div class={tw`flex flex-col gap-8`}>
+      <div class="flex flex-col gap-8">
         <SkillList title="Awesome" skills={skills.awesome} />
         <SkillList title="Great" skills={skills.great} />
         <SkillList title="Good" skills={skills.good} />
@@ -56,10 +54,10 @@ const SkillList: FunctionComponent<{ title: string; skills: string[] }> = ({
   skills,
 }) => (
   <Section title={title}>
-    <div class={tw`flex flex-wrap gap-2`}>
+    <div class="flex flex-wrap gap-2">
       {skills.map((skill, i) => (
         <div key={skill}>
-          <span class={tw`text-mono`}>{skill}</span>
+          <span class="text-mono">{skill}</span>
           {i !== skills.length - 1 && <span> ,</span>}
         </div>
       ))}

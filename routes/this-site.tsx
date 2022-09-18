@@ -1,8 +1,6 @@
-/** @jsx h */
-import { h, type FunctionComponent } from "preact";
+import { type FunctionComponent } from "preact";
 import { Head } from "$fresh/runtime.ts";
 import { PageProps } from "$fresh/server.ts";
-import { tw } from "@twind";
 import { Layout } from "@components/Layout.tsx";
 import { Section } from "@components/Section.tsx";
 import { title } from "@lib/header.ts";
@@ -27,11 +25,11 @@ export default function Page(props: PageProps) {
         <title>{title("This Site")}</title>
       </Head>
 
-      <div class={tw`flex flex-col gap-8`}>
+      <div class="flex flex-col gap-8">
         <Section title="Repository">
           <a
             href="https://github.com/itkrt2y/about-me"
-            class={tw`text-blue-300 hover:text-blue-100 underline`}
+            class="text-blue-300 hover:text-blue-100 underline"
           >
             itkrt2y/itkrt2y
           </a>
@@ -48,12 +46,12 @@ export default function Page(props: PageProps) {
 const TechList: FunctionComponent<{
   techs: readonly TechType[];
 }> = ({ techs }) => (
-  <div class={tw`flex gap-2`}>
+  <div class="flex gap-2">
     {techs.map((tech, i) => (
       <div key={tech.name}>
         <a
           href={tech.url}
-          class={tw`text-blue-300 hover:text-blue-100 underline`}
+          class="text-blue-300 hover:text-blue-100 underline"
           target="_blank"
         >
           {tech.name}

@@ -1,8 +1,6 @@
-/** @jsx h */
-import { h, type FunctionComponent } from "preact";
+import { type FunctionComponent } from "preact";
 import { Head } from "$fresh/runtime.ts";
 import { PageProps } from "$fresh/server.ts";
-import { tw } from "@twind";
 import { Layout } from "@components/Layout.tsx";
 import { Section } from "@components/Section.tsx";
 import { Timeline } from "@components/Timeline.tsx";
@@ -122,7 +120,7 @@ export default function Page(props: PageProps) {
         <title>{title("Experience")}</title>
       </Head>
 
-      <div class={tw`px-3`}>
+      <div class="px-3">
         <ExperienceList />
       </div>
     </Layout>
@@ -130,14 +128,14 @@ export default function Page(props: PageProps) {
 }
 
 const Content: FunctionComponent<{ title: string }> = ({ title, children }) => (
-  <div class={tw`flex flex-col gap-2`}>
-    <h4 class={tw`font-semibold underline text-sm`}>{title}</h4>
+  <div class="flex flex-col gap-2">
+    <h4 class="font-semibold underline text-sm">{title}</h4>
     {children}
   </div>
 );
 
 const Techs: FunctionComponent<{ techs: string[] }> = ({ techs }) => (
-  <div class={tw`flex flex-wrap gap-2`}>
+  <div class="flex flex-wrap gap-2">
     {techs.map((tech, i) => (
       <div key={tech}>
         {tech}
@@ -148,12 +146,12 @@ const Techs: FunctionComponent<{ techs: string[] }> = ({ techs }) => (
 );
 
 const Repos: FunctionComponent<{ repos: Repo[] }> = ({ repos }) => (
-  <div class={tw`flex flex-wrap gap-2`}>
+  <div class="flex flex-wrap gap-2">
     {repos.map((repo, i) => (
       <div key={repo.name}>
         <a
           href={repo.url}
-          class={tw`text-blue-300 hover:text-blue-100 underline font-mono`}
+          class="text-blue-300 hover:text-blue-100 underline font-mono"
         >
           {repo.name}
         </a>

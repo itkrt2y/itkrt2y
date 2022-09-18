@@ -1,8 +1,6 @@
-/** @jsx h */
-import { h, type FunctionComponent } from "preact";
+import { type FunctionComponent } from "preact";
 import { Head } from "$fresh/runtime.ts";
 import { PageProps } from "$fresh/server.ts";
-import { tw } from "@twind";
 import { Timeline } from "@components/Timeline.tsx";
 import { Layout } from "@components/Layout.tsx";
 import { title } from "@lib/header.ts";
@@ -38,7 +36,7 @@ export default function Page(props: PageProps) {
         <title>{title("Blog")}</title>
       </Head>
 
-      <div class={tw`px-3`}>
+      <div class="px-3">
         <Blogs blogs={blogs} />
       </div>
     </Layout>
@@ -51,7 +49,7 @@ const Blogs: FunctionComponent<{ blogs: BlogType[] }> = ({ blogs }) => (
       <Timeline.Item dateStr={blog.publishedAt} key={blog.title}>
         <a
           href={blog.url}
-          class={tw`text-blue-300 hover:text-blue-100 underline ml-3 w-max`}
+          class="text-blue-300 hover:text-blue-100 underline ml-3 w-max"
         >
           {blog.title}
         </a>
