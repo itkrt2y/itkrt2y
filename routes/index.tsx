@@ -18,8 +18,20 @@ const skills = {
     "Ruby on Rails",
     "GraphQL",
   ],
-  great: ["Docker", "MySQL", "PostgreSQL", "Elasticsearch"],
-  good: ["AWS", "GCP", "Rust", "Go", "Java", "Vue", "Redis", "Cassandra"],
+  great: [
+    "Docker",
+    "MySQL",
+    "PostgreSQL",
+    "Apache Kafka",
+    "Elasticsearch",
+    "AWS",
+    "Rust",
+    "Go",
+    "Java",
+    "Vue",
+    "Redis",
+    "Cassandra",
+  ],
   interests: [
     "WebAssembly",
     "WASI",
@@ -42,7 +54,6 @@ export default function Page(props: PageProps) {
       <div class="flex flex-col gap-8">
         <SkillList title="Awesome" skills={skills.awesome} />
         <SkillList title="Great" skills={skills.great} />
-        <SkillList title="Good" skills={skills.good} />
         <SkillList title="Interests" skills={skills.interests} />
       </div>
     </Layout>
