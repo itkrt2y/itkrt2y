@@ -1,5 +1,5 @@
 import { type FunctionComponent } from "preact";
-import { GitHubIcon, LeetCodeIcon, MailIcon, TwitterIcon } from "./icons.tsx";
+import { GitHubIcon, MailIcon, TwitterIcon } from "./icons.tsx";
 import { Nav } from "./Nav.tsx";
 
 export const Layout: FunctionComponent<{ url: URL }> = ({ url, children }) => (
@@ -63,9 +63,9 @@ const Icons = () => (
       <TwitterIcon />
     </a>
 
-    <a href="https://leetcode.com/itkrt2y">
+    {/* <a href="https://leetcode.com/itkrt2y">
       <LeetCodeIcon />
-    </a>
+    </a> */}
 
     <a href="mailto:itkrt2y.591721200@gmail.com">
       <MailIcon />
